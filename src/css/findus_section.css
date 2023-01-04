@@ -1,0 +1,32 @@
+.findusSection{
+    background-color: #F5F9FE;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.findusSection h1{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.findusImg{
+    width: 70%;
+    border-radius: 20px;
+}
+
+.city{
+    
+    text-align: center;
+}
+.postal{
+    text-align: center;
+    color: rgb(119, 119, 119);
+}
+
+.call{
+    text-align: center;
+}
+.number{
+    text-align: center;
+    color: rgb(119, 119, 119);
+}

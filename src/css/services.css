@@ -1,0 +1,41 @@
+@media only screen and (max-width: 1570px) {
+    .servicesCards{
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 1097px) {
+    .services{
+        height: 2000px !important;
+
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .services{
+        height: 2900px !important;
+
+    }
+}
+.services{
+    height: 1100px;
+    text-align: center;
+    background-color: #F5F9FE;
+}
+.services h2{
+    padding:25px 0px 0px 0px;
+    margin-bottom: -5px;
+}
+.colorText{
+    color: #3AA8E7;
+}
+.servicesCardsColumn{
+    display: flex; 
+    align-items: center;
+}
+
+.servicesCards{
+    margin-right: auto;
+    margin-left: auto;
+    width: 70%;
+}

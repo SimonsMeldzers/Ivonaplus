@@ -1,0 +1,113 @@
+@media only screen and (max-width: 1200px) {
+    .contact_number_header{
+        margin: 2px 0 0 55px !important ;
+    }
+    .contact_number_paragraph{
+        margin: 0px 0 0 55px !important;
+    }
+     
+    .links{
+        margin-left: 35px !important;
+    }
+}
+
+@media only screen and (max-width: 766px) {
+    .contact_number_header{
+        margin: 2px 0 0 0px !important ;
+    }
+    .contact_number_paragraph{
+        margin: 0px 0 0 0px !important;
+    }
+     
+    .links{
+        margin-left: 0px !important;
+    }
+
+    .footer_body{
+        height: 450px !important;
+    }
+}
+
+@media only screen and (max-width: 430px) {
+    .logo_col{
+        display: none !important;
+    }
+    .contact_number_header{
+        text-align: center !important;
+    }
+    .contact_number_paragraph{
+        text-align: center !important;
+    }
+     
+    .links_ul{
+        text-align: center !important;
+    }
+
+    .footer_body{
+        height: 250px !important;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .footer_body{
+        height: 290px !important;
+    }
+}
+@media only screen and (max-width: 288px) {
+    .footer_body{
+        height: 400px !important;
+    }
+}
+
+
+.footer_body{
+    background-color: #212529;
+    height: 250px;
+}
+
+.logo{
+    color: white;
+    margin-top: 40px;
+}
+.logo_text{
+    color: white;
+}
+
+.contact_header, .links_header{
+    color: white;
+    margin-top: 40px;
+    text-align: center;
+}
+.contact_number_header{
+    color: white;
+    margin: 2px 0 0 105px ;
+}
+.contact_number_paragraph{
+    color: rgb(225, 225, 225);
+    margin: 0px 0 0 105px;
+}
+
+.links{
+    text-decoration: none;
+    color: rgb(225, 225, 225);
+    margin-left: 85px;
+}
+
+.links:hover{  
+    color: #3aa8e7;
+}
+
+.copyright{
+    height: 50px;
+    background-color: #21262d;
+    color: rgb(173, 173, 173);
+    text-align: center;
+}
+
+.copyright p{
+    padding-top:12px;
+}
+
+.copyright p:hover{
+    color: #3aa8e7;
+}

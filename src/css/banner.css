@@ -1,0 +1,45 @@
+@media only screen and (max-width: 510px) {
+    .banner_col_2{
+        display: none;
+    }
+  }
+
+.banner_container{
+    background-image: url('../img/Car-Engine-top.jpg');
+    background-color: rgb(201, 201, 201);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size:cover;
+    width: 100%;
+    height: 400px;
+}
+
+#banner_heading{
+    color: white;
+    font-size: 55px;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+
+#banner_button{
+    color: white;
+    background-color: #3AA8E7 !important;
+    border: none;
+    font-size: 18px;
+    padding: 12px 30px 12px 30px;
+    width: 170px;
+
+    box-shadow: rgba(58, 168, 231, 0.6) 0px 7px 29px 0px;
+}
+#banner_button:hover{
+    background-color: #64c6ff !important;
+    box-shadow: rgba(58, 168, 231, 1) 0px 7px 29px 0px !important;
+}
+
+#banner_paragraph{
+    color: white;
+    font-size: 18px;
+    margin-top: 100px;
+    width: 90%;
+}
