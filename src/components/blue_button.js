@@ -3,9 +3,9 @@ import Button from 'react-bootstrap/Button';
 
 import '../css/blue_button.css'
 
-function BlueButton({text, width, height, fontSize}){
+function BlueButton({text, width, height, fontSize, type}){
     return(  
-        <Button className='blue_button' style={{ width: width + 'px', height: height + 'px', fontSize: fontSize + 'px'}}>{text}</Button>  
+        <Button type={type} className='blue_button' style={{ width: width + 'px', height: height + 'px', fontSize: fontSize + 'px'}}>{text}</Button>  
     );
 }
 

@@ -1,12 +1,13 @@
 import React from 'react' 
 import Header from '../components/header';
-import BlueButton from '../components/blue_button';
+import LoginInputs from '../components/login_inputs';
+
 
 function Login() {
   return (
   <>
     <Header/>
-    <BlueButton text={'This is a button'} width={'200'} height={'60'}/>
+    <LoginInputs/>
   </>
     
   );
