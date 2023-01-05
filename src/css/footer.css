@@ -9,6 +9,9 @@
     .links{
         margin-left: 35px !important;
     }
+    .footer_body{
+        height: 350px !important;
+    }
 }
 
 @media only screen and (max-width: 766px) {
@@ -24,11 +27,11 @@
     }
 
     .footer_body{
-        height: 450px !important;
+        height: 500px !important;
     }
 }
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 440px) {
     .logo_col{
         display: none !important;
     }

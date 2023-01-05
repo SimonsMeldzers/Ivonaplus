@@ -1,7 +1,7 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Container } from 'react-bootstrap';
-
+import BlueButton from './blue_button';
 import '../css/footer.css'
 
 function Footer(){
@@ -15,7 +15,7 @@ function Footer(){
 
                             <h2 className='logo'>Ivonaplus</h2>
                             <p className='logo_text'>Lorem ipsum dolor sit amet, nisi arcu  tellus, non tristique leo ipsum id tortor. Mauris sed aliquet orci,Lorem ipsum dolor sit amet, nisi arcu  tellus, non tristique leo ipsum id tortor. Mauris sed aliquet orci.</p>
-
+                            <BlueButton text='Sazināties' fontSize='15' width='125'/>
                         </Col>
                         <Col>
 

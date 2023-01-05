@@ -5,7 +5,7 @@
     font-size: 18px;
     padding: 12px 30px 12px 30px;
     width: 170px;
-
+    text-align: center;
     box-shadow: rgba(58, 168, 231, 0.6) 0px 7px 29px 0px;
 }
 .blue_button:hover{
