@@ -33,3 +33,20 @@
     border: solid rgb(211, 211, 211) 1px;
     border-radius: 20px;
 }
+
+.blue_button{
+    color: white;
+    background-color: #3AA8E7 !important;
+    border: none;
+    font-size: 15px;
+    padding: 1px 30px 1px 30px;
+    width: 140px;
+    height: 40px;
+    margin-top: 7px;
+    text-align: center;
+    box-shadow: rgba(58, 168, 231, 0.6) 0px 7px 29px 0px;
+}
+.blue_button:hover{
+    background-color: #64c6ff !important;
+    box-shadow: rgba(58, 168, 231, 1) 0px 7px 29px 0px !important;
+}

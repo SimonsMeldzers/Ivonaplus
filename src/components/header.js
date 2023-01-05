@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import '../css/header.css'
@@ -12,17 +12,17 @@ function Header() {
     <header>
     <Navbar id='header-body' expand="lg">
         <Container>
-            <Navbar.Brand href=""><Link className='router_logo' to='/'>Ivonaplus</Link></Navbar.Brand>
+            <NavLink className='router_logo' to='/'>Ivonaplus</NavLink>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href=""><Link className='router_links' to='/'>Serviss</Link></Nav.Link>
-                    <Nav.Link href="#">Auto noma</Nav.Link>
-                    <Nav.Link href="#">Rezerves detaļas</Nav.Link>
-                    <Nav.Link href="">Citas preces</Nav.Link>
+                    <NavLink className='router_links' to='/'>Serviss</NavLink>
+                    <NavLink className='router_links' to='/'>Mašīnu noma</NavLink>
+                    <NavLink className='router_links' to='/'>Rezerves daļas</NavLink>
+                    <NavLink className='router_links' to='/'>Citas preces</NavLink>
                 </Nav>
                 <Nav>
-                    <Nav.Link><Link className='router_links' to='/login'>Log In</Link></Nav.Link>
+                    <NavLink className='router_links' to='/login'>Log In</NavLink>
                 </Nav>
             </Navbar.Collapse>
         </Container>
