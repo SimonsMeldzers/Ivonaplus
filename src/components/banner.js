@@ -14,7 +14,7 @@ function Banner(){
                     <Col className='banner_col_1'>
                         <Row className="justify-content-center">
                             <h1 id='banner_heading'> Remonts, noma, detaļas.</h1>
-                            <BlueButton text='Uzzināt vairāk' fontSize='18'/>
+                            <BlueButton text='Uzzināt vairāk' fontSize='18' height='50' width='180'/>
                         </Row>  
                     </Col>
                     <Col className='banner_col_2'>
