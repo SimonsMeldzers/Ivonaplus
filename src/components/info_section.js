@@ -1,6 +1,6 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import  Button  from 'react-bootstrap/Button';
+import BlueButton from './blue_button';
 import '../css/info_section.css'
 
 import Image from 'react-bootstrap/Image'
@@ -21,7 +21,7 @@ function InfoSection(){
                             Morbi viverra ut arcu et condimentum. Maecenas nulla urna, imperdiet sed vehicula et, finibus at lorem. 
                             Cras tincidunt eros vitae varius gravida. Suspendisse nec euismod elit.
                         </p>
-                        <Button className='infoSectionButton'>Sazināties tagad</Button>
+                        <BlueButton text='Sazināties tagad' width='190'/>
                     </Col>
                     <Col className='infoSectionCol2'>
                         <Image className='infoSectionImg' src='https://www.autodna.lv/blog/wp-content/uploads/2020/03/Ko-parbauda-tehniskaja-apskate-autoDNA-titul.jpg'></Image>    

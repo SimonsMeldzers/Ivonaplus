@@ -26,24 +26,6 @@
     margin-bottom: auto;
 }
 
-.infoSectionButton{
-    color: white;
-    background-color: #3AA8E7 !important;
-    border: none;
-    font-size: 18px;
-    padding: 12px 30px 12px 30px;
-    width: 200px;
-
-    margin-top: 20px;
-    margin-bottom: 30px;
-    box-shadow: rgba(58, 168, 231, 0.6) 0px 7px 29px 0px;
-}
-
-.infoSectionButton:hover{
-    background-color: #64c6ff !important;
-    box-shadow: rgba(58, 168, 231, 1) 0px 7px 29px 0px !important;
-}
-
 .infoSectionImg{
     width: 100%;
     height: auto;

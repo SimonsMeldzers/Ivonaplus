@@ -1,7 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+import BlueButton from './blue_button';
 
 
 import '../css/banner.css'
@@ -14,7 +14,7 @@ function Banner(){
                     <Col className='banner_col_1'>
                         <Row className="justify-content-center">
                             <h1 id='banner_heading'> Remonts, noma, detaļas.</h1>
-                            <Button id="banner_button">Uzzināt vairāk</Button>  
+                            <BlueButton text='Uzzināt vairāk'/>
                         </Row>  
                     </Col>
                     <Col className='banner_col_2'>

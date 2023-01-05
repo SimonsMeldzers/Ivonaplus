@@ -22,21 +22,6 @@
     margin-bottom: 30px;
 }
 
-#banner_button{
-    color: white;
-    background-color: #3AA8E7 !important;
-    border: none;
-    font-size: 18px;
-    padding: 12px 30px 12px 30px;
-    width: 170px;
-
-    box-shadow: rgba(58, 168, 231, 0.6) 0px 7px 29px 0px;
-}
-#banner_button:hover{
-    background-color: #64c6ff !important;
-    box-shadow: rgba(58, 168, 231, 1) 0px 7px 29px 0px !important;
-}
-
 #banner_paragraph{
     color: white;
     font-size: 18px;
