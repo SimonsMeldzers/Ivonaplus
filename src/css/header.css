@@ -2,3 +2,21 @@
     background-color: white ;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 7px;
 }
+
+.router_logo{
+    text-decoration: none;
+    color: black;
+}
+
+.router_links{
+    text-decoration: none;
+    color: var(--bs-nav-link-color);
+}
+
+.router_logo:hover{
+    color: #627580;
+}
+
+.router_links:hover{
+    color: #343a40;
+}
