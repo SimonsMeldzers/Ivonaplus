@@ -1,0 +1,95 @@
+@media (max-width:990px) {
+    .car_name, .car_year, .car_param, .car_info{
+        font-size: 15px !important;
+        font-weight: 400 !important;
+    }
+    .car_price{
+        font-weight: 350;
+        font-size: 26px;
+    }
+}
+
+.car_body{
+    background-color: none;
+    width: 100%;
+    
+}
+
+.car_container{
+    margin-top: 15px;
+    border-radius: 5px;
+    background-color: #F5F9FE;
+    width: 100%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+
+.car_image{
+    width: 100%;
+    height: 100%;
+}
+
+.car_name{
+    margin-top: 15px;
+    margin-bottom: 0px;
+    font-weight: 350;
+}
+
+.car_year{
+    font-weight: 350;
+}
+
+.car_param{
+    font-weight: 350;
+    margin-top: 15px;
+}
+.car_info{
+    font-weight: 400;
+    font-size: 17px;
+    margin-top: 15px;
+    width: 90%;
+}
+
+.car_price_row{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.car_price{
+    color: #3AA8E7;
+    font-weight: 400;
+}
+
+.car_button h6{
+    color: gray;
+    font-weight: 300;
+    margin-top: 5px;
+    text-decoration: underline;
+}
+
+
+#blue_button{
+    color: white;
+    background-color: #3AA8E7 !important;
+    border: none;
+    border-radius: 10px;
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+    padding: 1px 30px 1px 30px;
+    margin-top: 7px;
+    text-align: center;
+    box-shadow: rgba(58, 168, 231, 0.6) 0px 7px 29px 0px;
+}
+#blue_button:hover{
+    background-color: #64c6ff !important;
+    box-shadow: rgba(58, 168, 231, 1) 0px 7px 29px 0px !important;
+}
+
+.delete_button{
+    background-color: transparent;
+    border: none;
+}
