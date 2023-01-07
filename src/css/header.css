@@ -1,3 +1,8 @@
+@media (max-width: 950px) {
+    .router_links{
+        margin: 10px 0px 0px 0px !important;
+    }
+}
 #header-body{
     background-color: white ;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 7px;
@@ -6,11 +11,14 @@
 .router_logo{
     text-decoration: none;
     color: black;
-}
+    margin-right: 10px;
+    font-size: 20px;
+    }
 
 .router_links{
     text-decoration: none;
     color: var(--bs-nav-link-color);
+    margin: 10px 14px 10px 14px;
 }
 
 .router_logo:hover{

@@ -2,6 +2,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Container } from 'react-bootstrap';
 import BlueButton from './blue_button';
+import { NavLink } from 'react-router-dom';
+
 import '../css/footer.css'
 
 function Footer(){
@@ -31,10 +33,10 @@ function Footer(){
 
                             <h4 className='links_header'>Mājaslapas saites</h4>
                             <ul className='links_ul'>
-                                <li><a className='links' href="">Serviss</a></li>
-                                <li><a className='links' href="">Auto Noma</a></li>
-                                <li><a className='links' href="">Rezerves daļas</a></li>
-                                <li><a className='links' href="">Citas Preces</a></li>
+                                <li><NavLink className='links' to='/'> Serviss </NavLink></li>
+                                <li><NavLink className='links'> Auto Noma </NavLink></li>
+                                <li><NavLink className='links'> Rezerves daļas </NavLink></li>
+                                <li><NavLink className='links'> Citas Preces </NavLink></li>
                             </ul>
                         </Col>
                     </Row>
