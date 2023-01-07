@@ -6,9 +6,14 @@ import { useState } from 'react';
 import { auth } from '../firebase-config';
 import { onAuthStateChanged, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 
+import { useNavigate } from 'react-router-dom';
+
 import '../css/login_inputs.css'
 
-function LoginInputs() {
+
+function LoginInputs({ setIsAuth }) {
+  // Makes it so after successfuly login in, user redirects to whatever page the function is set for
+  let navigate = useNavigate();
 
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -25,6 +30,9 @@ function LoginInputs() {
     try {
       const user = signInWithEmailAndPassword(auth, loginEmail, loginPassword);
       console.log(user);
+      localStorage.setItem("isAuth", true);
+      setIsAuth(true);
+      navigate("/");
     } catch (error){
       console.log(error.message);
     }
@@ -32,6 +40,9 @@ function LoginInputs() {
 
   const logout = async () => {
     await signOut(auth);
+    localStorage.clear();
+    setIsAuth(false);
+    navigate("/");
   };
 
   return (
@@ -68,6 +79,7 @@ function LoginInputs() {
 
           </Form.Group>
           <Button className='blue_button' onClick={login}>Apstiprināt</Button>
+          
         </Form>
       </Container>
     </div>

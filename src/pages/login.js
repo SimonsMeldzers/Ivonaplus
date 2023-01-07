@@ -3,11 +3,11 @@ import Header from '../components/header';
 import LoginInputs from '../components/login_inputs';
 
 
-function Login() {
+function Login({ setIsAuth }) {
   return (
   <>
     <Header/>
-    <LoginInputs/>
+    <LoginInputs setIsAuth={setIsAuth}/>
   </>
     
   );
