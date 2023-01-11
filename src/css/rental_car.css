@@ -7,7 +7,66 @@
         font-weight: 350;
         font-size: 26px;
     }
+    #blue_button{
+        width: 100px !important;
+        height: 30px !important;
+        font-size: 12px !important;
+        margin: 0 0 0 0 !important;
+        padding: 0 0 0 0 !important;
+
+    }
 }
+@media (max-width:768px) {
+    .car_info{
+        display: none !important;
+    }
+    .car_price_difference{
+        font-size: 10px !important;
+    }
+    .icons {
+        width: 15px !important;
+        height: 15px !important;
+    }
+    .icons_col{
+        margin: 0 0 0 0 !important;
+        padding: 0 0 0 0 !important;
+    }
+}
+@media (max-width:580px) {
+
+    #blue_button{
+        width: 50px !important;
+        height: 25px !important;
+        font-size: 9px !important;
+        border-radius: 2px !important;
+    }
+    .car_price{
+        font-size: 15px !important;
+    }
+}
+@media (max-width:480px) {
+    #icon_column{
+        display: none !important;
+    }
+}
+@media (max-width:350px) {
+    .img_col{
+        height: 130px !important;
+    }
+    .car_image{
+        border-radius: 10px !important;
+    }
+}
+
+@media (max-width:304px) {
+    #blue_button{
+        margin-bottom: 3px !important;
+    }
+    .img_col{
+        height: 110px !important;
+    }
+}
+
 
 .car_body{
     background-color: none;
@@ -42,6 +101,7 @@
 .car_param{
     font-weight: 350;
     margin-top: 15px;
+    text-align: center;
 }
 .car_info{
     font-weight: 400;
@@ -50,20 +110,20 @@
     width: 90%;
 }
 
-.car_price_row{
+/* .car_price_row{
     height: 100%;
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
-}
+} */
 
 .car_price{
     color: #3AA8E7;
     font-weight: 400;
 }
 
-.car_button h6{
+.car_price_difference{
     color: gray;
     font-weight: 300;
     margin-top: 5px;
@@ -76,9 +136,9 @@
     background-color: #3AA8E7 !important;
     border: none;
     border-radius: 10px;
-    width: 180px;
-    height: 50px;
-    font-size: 20px;
+    width: 130px;
+    height: 40px;
+    font-size: 16px;
     padding: 1px 30px 1px 30px;
     margin-top: 7px;
     text-align: center;

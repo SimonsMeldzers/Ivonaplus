@@ -12,6 +12,11 @@ import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../firebase-config';
 import { useNavigate } from 'react-router-dom';
 
+import { storage } from '../firebase-config';
+import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
+
+import { v4 } from 'uuid'
+
 function CreateRental({isAuth}) {
 
     const [name, setName] = useState("");
@@ -22,21 +27,42 @@ function CreateRental({isAuth}) {
     const [AC, setAC] = useState("");
     const [price, setPrice] = useState("");
     const [available, setAvailable] = useState("");
-    const [image, setImage] = useState("");
+    const [image, setImage] = useState(null);
+    const [imageList, setImageList] = useState([]);
 
     let navigate = useNavigate();
 
     const postsCollectionRef = collection(db, "CarRental")
-    const createPost = async () => {
-        await addDoc(postsCollectionRef, {name, year, seats, doors, gearBox, AC, price, available, image});
-        navigate('/rental');
-    };
 
     useEffect(() => {
         if (!localStorage.getItem('isAuth')){
             navigate("/login");
         }
     }, []);
+
+    const imageListRef = ref(storage, "rental/");
+
+    const uploadImage = () => {
+        if(image == null) return;
+        const imageRef = ref(storage, `rental/${image.name + v4()}`);
+        uploadBytes(imageRef, image).then(() => {
+            alert("Image Uploaded")
+        });
+    };
+
+    useEffect(() => {
+        listAll(imageListRef).then((response) => {
+            response.items.forEach((item) => {
+                getDownloadURL(item).then((url) => {
+                    setImageList((prev) => [...prev, url]);
+                });
+            });
+        });
+    }, []);
+    const createPost = async () => {
+        await addDoc(postsCollectionRef, {name, year, seats, doors, gearBox, AC, price, available, imageList});
+        navigate('/rental');
+    };
 
   return (
     <>
@@ -133,6 +159,7 @@ function CreateRental({isAuth}) {
                                 type="checkbox" 
                                 label="Mašīna ir pieejama?" 
                                 />
+                                <Form.Control onChange={(event) => {setImage(event.target.files[0]);uploadImage();}} onClick={uploadImage} type="file" />
                             </Form.Group>
                         </Col>
                     </Row>

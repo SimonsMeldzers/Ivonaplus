@@ -16,55 +16,52 @@ function RentalCar({name, year, seats, doors, gearBox, AC, price, image, id}) {
   return (
     <div className='car_body'>
         <Container className='car_container'>
-            <Row>
-                <Col>
-                    <Image fluid='true' className='car_image' src='https://img.autoabc.lv/volvo-s40/volvo-s40_2004_Sedans_15101383731.jpg'></Image>
+            <Row className='car_row'>
+                <Col xs={6} lg={4} className='img_col'>
+                    <Image fluid='true' className='car_image img-fluid' src='https://img.autoabc.lv/volvo-s40/volvo-s40_2004_Sedans_15101383731.jpg'></Image>
                 </Col>
-                <Col xs={5}>
+                <Col xs={6} lg={8}>
                     <Row>
                         <h2 className='car_name'>{name}</h2>
                     </Row>
                     <Row>
                         <h4 className='car_year'>{year}</h4>
                     </Row>
-                    <Row>
-                        <Col>
-                            <h4 className='car_param'>Vietas: {seats}</h4>
+                    <Row md="auto">
+                        <Col className='icons_col' xs={3}>
+                            <h4 className='car_param'><img className='icons' style={{width:'22px', height:'22px'}} src="https://static-00.iconduck.com/assets.00/person-icon-512x512-5lhrcpms.png"/> <span id="icon_column">:</span> {seats}</h4>
                         </Col>
-                        <Col>
-                            <h4 className='car_param'>Durvis: {doors}</h4>
+                        <Col className='icons_col' xs={3}>
+                            <h4 className='car_param'><img className='icons' style={{width:'28px', height:'28px'}} src="https://static.thenounproject.com/png/165236-200.png" alt="" /> <span id="icon_column">:</span> {doors}</h4>
                         </Col>
-                        <Col>
-                            <h4 className='car_param'>Kārba: {gearBox}</h4>
+                        <Col className='icons_col' xs={3}>
+                            <h4 className='car_param'><img className='icons' style={{width:'21px', height:'21px'}} src="https://cdn-icons-png.flaticon.com/512/1820/1820633.png" alt="" /> <span id="icon_column">:</span> {gearBox}</h4>
                         </Col>
-                        <Col>
-                            <h4 className='car_param'>A/C: {AC}</h4>
+                        <Col className='icons_col' xs={3}>
+                            <h4 className='car_param'><img className='icons' style={{width:'27px', height:'27px'}} src="https://cdn-icons-png.flaticon.com/512/567/567301.png" alt="" /> <span id="icon_column">:</span> {AC}</h4>
                         </Col>    
                     </Row>
-                    <Row>
-                        <p className='car_info'>Mašīnu var savākt jebkurā laikā, iepriekš sazvanoties pa tel. numuru +371 29275712. <br /> Ir pieejama mašīnas piegāde.
-                        </p>
-                    </Row>
-                </Col>
 
-                <Col>
-                    <Row className='car_price_row'>
-                        <div className='car_button'>
-                            <h1 className='car_price'>{price}€/24h</h1>
-                            <button id='blue_button'> Rezervēt </button>
-                            <h6> *Cena var atšķirties</h6>
+                    <Row className='car_price_row' md="auto">               
+                            <Col>
+                                <h1 className='car_price'>{price}€/24h</h1>
+                                <h6 className='car_price_difference'> *Cena var atšķirties</h6>
+                            </Col>
+                            <Col>
+                                <button id='blue_button'> Rezervēt </button>
+                                    {localStorage.getItem('isAuth') && (
+                                    <button 
+                                    onClick={() => {
+                                            deletePost(id);
+                                        }} 
+                                    className='delete_button'>&#128465;
+                                    </button>)}
+                            </Col>
                             
-                            {localStorage.getItem('isAuth') && (
-                            <button 
-                            onClick={() => {
-                                    deletePost(id);
-                                }} 
-                            className='delete_button'>&#128465;
-                            </button>)}
 
-                        </div>
                     </Row>
                 </Col>
+
             </Row>
                 
         </Container>

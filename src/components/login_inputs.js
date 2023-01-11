@@ -29,7 +29,6 @@ function LoginInputs({ setIsAuth }) {
   const login = async () => {
     try {
       const user = signInWithEmailAndPassword(auth, loginEmail, loginPassword);
-      console.log(user);
       localStorage.setItem("isAuth", true);
       setIsAuth(true);
       navigate("/");
