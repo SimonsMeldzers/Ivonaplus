@@ -27,7 +27,7 @@ function RentalCar({name, year, seats, doors, gearBox, AC, price, image, id}) {
                     <Row>
                         <h4 className='car_year'>{year}</h4>
                     </Row>
-                    <Row md="auto">
+                    <Row md="auto" className='icons_row'>
                         <Col className='icons_col' xs={3}>
                             <h4 className='car_param'><img className='icons' style={{width:'22px', height:'22px'}} src="https://static-00.iconduck.com/assets.00/person-icon-512x512-5lhrcpms.png"/> <span id="icon_column">:</span> {seats}</h4>
                         </Col>

@@ -48,6 +48,9 @@
     #icon_column{
         display: none !important;
     }
+    .icons_row{
+        margin-top: -20px !important;
+    }
 }
 @media (max-width:350px) {
     .img_col{
