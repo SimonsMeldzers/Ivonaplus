@@ -5,8 +5,6 @@ import { Container, Row, Col, Image} from 'react-bootstrap';
 import { deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../firebase-config';
 
-import { useSelector } from 'react-redux';
-
 function RentalCar({name, year, seats, doors, gearBox, AC, price, id, imageUrl, available}) {
     const deletePost = async (id) => {
         const postDoc = doc(db, "CarRental", id);

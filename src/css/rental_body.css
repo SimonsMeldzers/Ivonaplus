@@ -1,6 +1,7 @@
 .rental-body{
-    height: 100rem;
+    height: auto;
     width: 100%;
     background-color: #FFFFFF;
     padding-top: 0px;
+    padding-bottom: 20px;
 }

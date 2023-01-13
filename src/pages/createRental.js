@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Footer from '../components/footer'
 import Header from '../components/header'
 
-import { createStore } from 'redux';
-
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Container, Row, Col } from 'react-bootstrap';
