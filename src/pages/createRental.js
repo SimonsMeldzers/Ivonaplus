@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Footer from '../components/footer'
 import Header from '../components/header'
 
+import { createStore } from 'redux';
+
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -15,7 +17,6 @@ import { useNavigate } from 'react-router-dom';
 import { storage } from '../firebase-config';
 import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
 
-import { v4 } from 'uuid'
 
 function CreateRental({isAuth}) {
 
@@ -28,8 +29,8 @@ function CreateRental({isAuth}) {
     const [price, setPrice] = useState("");
     const [available, setAvailable] = useState("");
     const [image, setImage] = useState(null);
-    const [imageList, setImageList] = useState([]);
-
+    const [imageUrls, setImageUrls] = useState([]);
+    
     let navigate = useNavigate();
 
     const postsCollectionRef = collection(db, "CarRental")
@@ -37,32 +38,53 @@ function CreateRental({isAuth}) {
     useEffect(() => {
         if (!localStorage.getItem('isAuth')){
             navigate("/login");
-        }
-    }, []);
-
-    const imageListRef = ref(storage, "rental/");
-
-    const uploadImage = () => {
-        if(image == null) return;
-        const imageRef = ref(storage, `rental/${image.name + v4()}`);
-        uploadBytes(imageRef, image).then(() => {
-            alert("Image Uploaded")
-        });
-    };
-
-    useEffect(() => {
+        };
         listAll(imageListRef).then((response) => {
             response.items.forEach((item) => {
                 getDownloadURL(item).then((url) => {
-                    setImageList((prev) => [...prev, url]);
+                    setImageUrls((prev) => [...prev, url]); 
                 });
             });
         });
     }, []);
+
+    const imageListRef = ref(storage, "rental/");
+
+    // const uploadImage = () => {
+    //     if(image == null) return;
+    //     const imageLinkName = `rental/${image.name + new Date().getTime()}`;
+    //     const imageRef = ref(storage, imageLinkName);
+    //     uploadBytes(imageRef, image).then((snapshot) => {
+    //         getDownloadURL(snapshot.ref).then((url) => {
+    //             setImageUrls((prev) => [...prev, url]);
+    //         });
+    //         alert("Image Uploaded");
+    //     });
+    // };
+    const uploadImage = async () => {
+        if(image == null) return;
+        const imageLinkName = `rental/${image.name + new Date().getTime()}`;
+        const imageRef = ref(storage, imageLinkName);
+        const snapshot = await uploadBytes(imageRef, image);
+        const url = await getDownloadURL(snapshot.ref);
+        setImageUrls((prev) => [...prev, url]);
+        alert("Image Uploaded");
+        return url;
+    };
+    
+ 
+    // const createPost = async () => {
+    //     await addDoc(postsCollectionRef, {name, year, seats, doors, gearBox, AC, price, available});
+    //     uploadImage();
+    //     navigate('/rental');
+    // };
     const createPost = async () => {
-        await addDoc(postsCollectionRef, {name, year, seats, doors, gearBox, AC, price, available, imageList});
+        const url = await uploadImage();
+        await addDoc(postsCollectionRef, {name, year, seats, doors, gearBox, AC, price, available, url});
         navigate('/rental');
     };
+    
+
 
   return (
     <>
@@ -171,6 +193,7 @@ function CreateRental({isAuth}) {
                 </Form>
             </Container>
             </div>
+
         <Footer/>
     </>
   )

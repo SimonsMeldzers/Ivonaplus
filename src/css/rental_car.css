@@ -156,3 +156,12 @@
     background-color: transparent;
     border: none;
 }
+
+.available{
+    color: rgb(113, 186, 3);
+    font-size: 15px;
+}
+.not_available{
+    color: red;
+    font-size: 15px;
+}

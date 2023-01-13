@@ -5,8 +5,9 @@ import { Container, Row, Col, Image} from 'react-bootstrap';
 import { deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../firebase-config';
 
+import { useSelector } from 'react-redux';
 
-function RentalCar({name, year, seats, doors, gearBox, AC, price, image, id}) {
+function RentalCar({name, year, seats, doors, gearBox, AC, price, id, imageUrl, available}) {
     const deletePost = async (id) => {
         const postDoc = doc(db, "CarRental", id);
         await deleteDoc(postDoc);
@@ -18,7 +19,7 @@ function RentalCar({name, year, seats, doors, gearBox, AC, price, image, id}) {
         <Container className='car_container'>
             <Row className='car_row'>
                 <Col xs={6} lg={4} className='img_col'>
-                    <Image fluid='true' className='car_image img-fluid' src='https://img.autoabc.lv/volvo-s40/volvo-s40_2004_Sedans_15101383731.jpg'></Image>
+                    <Image fluid='true' className='car_image img-fluid' src={imageUrl}></Image>
                 </Col>
                 <Col xs={6} lg={8}>
                     <Row>
@@ -46,6 +47,7 @@ function RentalCar({name, year, seats, doors, gearBox, AC, price, image, id}) {
                             <Col>
                                 <h1 className='car_price'>{price}€/24h</h1>
                                 <h6 className='car_price_difference'> *Cena var atšķirties</h6>
+                                {!available == "" ? <p className='available'>Pieejama</p> : <p className='not_available'>Nav pieejama</p>}
                             </Col>
                             <Col>
                                 <button id='blue_button'> Rezervēt </button>

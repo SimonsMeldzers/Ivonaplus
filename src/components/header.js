@@ -30,6 +30,7 @@ function Header() {
                     <NavLink className='router_links' to='/rental'>Mašīnu noma</NavLink>
                     <NavLink className='router_links' to='/'>Rezerves daļas</NavLink>
                     <NavLink className='router_links' to='/'>Citas preces</NavLink>
+                    {!localStorage.getItem('isAuth') ? <NavLink className='router_links' to='/'></NavLink> : <NavLink className='router_links' to='/createrental'> Pievienot </NavLink>}
                 </Nav>
                 <Nav>
                     {!localStorage.getItem('isAuth') ? <NavLink className='router_links' to='/login'>Log In</NavLink> : <NavLink onClick={signUserOut} className='router_links' to='/'> Sign Out </NavLink>}
