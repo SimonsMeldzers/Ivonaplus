@@ -52,9 +52,29 @@
         margin-top: -20px !important;
     }
 }
-@media (max-width:350px) {
+@media (max-width:470px) {
+    .img_col{
+        height: 150px !important;
+    }
+}
+
+@media (max-width:420px) {
     .img_col{
         height: 130px !important;
+    }
+}
+
+@media (max-width:360px) {
+    .img_col{
+        height: 120px !important;
+    }
+    .car_image{
+        border-radius: 10px !important;
+    }
+}
+@media (max-width:340px) {
+    .img_col{
+        height: 110px !important;
     }
     .car_image{
         border-radius: 10px !important;
@@ -66,7 +86,7 @@
         margin-bottom: 3px !important;
     }
     .img_col{
-        height: 110px !important;
+        height: 100px !important;
     }
 }
 
