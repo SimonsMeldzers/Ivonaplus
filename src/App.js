@@ -4,7 +4,10 @@ import Home from './pages/home';
 import Login from './pages/login';
 import Rental from './pages/rental';
 import CreateRental from './pages/createRental';
+import CarParts from './pages/carParts';
+import CreateCarParts from './pages/createCarParts';
 import { useState } from 'react';
+
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -15,6 +18,8 @@ function App() {
         <Route path='/login' element={ <Login setIsAuth={setIsAuth}/>} />
         <Route path='/rental' element={ <Rental/>} />
         <Route path='/createrental' element={ <CreateRental isAuth={isAuth}/>} />
+        <Route path='/carparts' element={ <CarParts/>} />
+        <Route path='/createcarparts' element={<CreateCarParts/>}/>
       </Routes>
     </Router>
   );
