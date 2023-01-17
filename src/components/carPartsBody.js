@@ -19,7 +19,7 @@ function CarPartsBody() {
   }, []);
   
   return (
-    <Container>
+    <Container className='car_parts_body'>
       <Row className='justify-content-md-center'>
       {postLists.map((post) => {
           const imageUrlsArr = post.imageUrls;
