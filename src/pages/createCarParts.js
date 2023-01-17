@@ -4,7 +4,7 @@ import Header from '../components/header'
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Spinner } from 'react-bootstrap';
 
 import '../css/pages_css/createCarParts.css'
 import { async } from '@firebase/util';
@@ -17,6 +17,8 @@ import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
 
 
 function CreateCarParts({isAuth}) {
+    {/* For the button & spinner */}
+    const [show, toggleShow] = useState(true);
 
     const [title, setTitle] = useState("");
     const [year, setYear] = useState("");
@@ -59,7 +61,7 @@ function CreateCarParts({isAuth}) {
 
     const createPost = async () => {
         const imageUrls = await uploadImages();
-        await addDoc(postsCollectionRef, {title, year, gearBox, price, imageUrls});
+        await addDoc(postsCollectionRef, {title, year, gearBox, price, engine, imageUrls});
         navigate('/carparts');
     };
 
@@ -68,31 +70,33 @@ function CreateCarParts({isAuth}) {
         <Header/>
         <div className="crBody">
             <Container className='crContainer'>
-                <h2>Auto noma</h2>
+                <h2>Rezerves detaļas</h2>
                 <Form className='crForm'>
                 <Form.Group className="mb-3">
                     <Row>
                         <Col>
-                            <Form.Label>Mašīnas nosaukums</Form.Label>
+                            <Form.Label>Maš. nosaukums</Form.Label>
                             <Form.Control onChange={(event) => {
                                 setTitle(event.target.value);
                             }} 
                             className='crInputDouble'
                             type="" 
-                            placeholder="Mašīnas nosaukums" 
+                            placeholder="Maš. nosaukums" 
                             />
 
                         </Col>
+                        
                         <Col>
-                            <Form.Label>Mašīnas Gads</Form.Label>
-                            <Form.Control onChange={(event) => {
-                                setYear(event.target.value);
-                            }} 
-                            className='crInputDouble'
-                            type="" 
-                            placeholder="Mašīnas Gads" 
-                            />
+                            <Form.Label>Nobraukums</Form.Label>
+                                <Form.Control onChange={(event) => {
+                                    setMileage(event.target.value);
+                                }} 
+                                className='crInputDouble'
+                                type="" 
+                                placeholder="km" 
+                                />
                         </Col>
+                                                     
                     </Row>
                 </Form.Group>
 
@@ -110,10 +114,28 @@ function CreateCarParts({isAuth}) {
                                 <option value="A">Automāts</option>
                             </Form.Select>
                         </Col>
+                        <Col>
+                                <Form.Control onChange={(event) => {
+                                    setYear(event.target.value);
+                                }} 
+                                className='crInputDouble'
+                                type="" 
+                                placeholder="Maš. gads" 
+                                />
+                        </Col>
+                        <Col>                                
+                                <Form.Control onChange={(event) => {
+                                    setEngine(event.target.value);
+                                }} 
+                                className='crInputDouble'
+                                type="" 
+                                placeholder="Mot. tilp." 
+                                />
+                        </Col>
 
-                     
+
                     </Row>
-                    <Form.Label style={{marginTop: '15px'}}>Mašīnas cena</Form.Label>
+                    <Form.Label style={{marginTop: '0px'}}></Form.Label>
                     <Row >
                         <Col>
                             <Form.Control onChange={(event) => {
@@ -124,12 +146,23 @@ function CreateCarParts({isAuth}) {
                                 placeholder="Mašīnas cena" 
                             /> 
                         </Col>
+                        <Col>
+                            <Form.Control onChange={(event) => {
+                                setVin(event.target.value);
+                            }} 
+                                className=''
+                                type="" 
+                                placeholder="VIN" 
+                            /> 
+                        </Col>
                     </Row>
+                    <Form.Label style={{marginTop: '0px'}}></Form.Label>
                     <Form.Control onChange={(event) => {setImages(event.target.files);uploadImages();}} type="file" multiple />
                 </Form.Group>
-
-                <Button onClick={createPost} className='blue_button'>Apstiprināt</Button>
-                
+                {
+                    show ? <Button onClick={() =>{ toggleShow(!show); createPost()}} className='blue_button'>Apstiprināt</Button>
+                        : <Spinner animation="border" variant="primary" />
+                    }
                 </Form>
             </Container>
             </div>

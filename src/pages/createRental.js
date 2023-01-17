@@ -4,7 +4,7 @@ import Header from '../components/header'
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Spinner } from 'react-bootstrap';
 
 import '../css/pages_css/createRental.css'
 import { async } from '@firebase/util';
@@ -17,6 +17,8 @@ import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
 
 
 function CreateRental({isAuth}) {
+    {/* For the button & spinner */}
+    const [show, toggleShow] = useState(true);
 
     const [name, setName] = useState("");
     const [year, setYear] = useState("");
@@ -187,7 +189,10 @@ function CreateRental({isAuth}) {
                 </Form.Group>
 
                 <Button onClick={createPost} className='blue_button'>Apstiprināt</Button>
-                
+                {
+                    show ? <Button onClick={() =>{ toggleShow(!show); createPost()}} variant="primary">Apstiprināt</Button>
+                        : <Spinner animation="border" variant="primary" />
+                    }
                 </Form>
             </Container>
             </div>
