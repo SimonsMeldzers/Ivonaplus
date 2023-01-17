@@ -15,7 +15,6 @@ function CarPartsBody() {
       const data = await getDocs(postsCollectionRef);
       setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
     };
-
     getPosts();
   }, []);
   
@@ -23,7 +22,8 @@ function CarPartsBody() {
     <Container>
       <Row className='justify-content-md-center'>
       {postLists.map((post) => {
-          return <CarPartsElement key={post.id} title={post.title} text={post.text} img={post.img} />
+          const imageUrlsArr = post.imageUrls;
+          return <CarPartsElement key={post.id} title={post.title} text={post.text} imageUrls={imageUrlsArr} /> 
         })}
       </Row>
     </Container>

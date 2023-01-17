@@ -62,8 +62,6 @@ function CreateCarParts({isAuth}) {
         await addDoc(postsCollectionRef, {title, year, gearBox, price, imageUrls});
         navigate('/carparts');
     };
-    
-
 
   return (
     <>
