@@ -175,22 +175,21 @@ function CreateRental({isAuth}) {
                         </Col>
                         <Col>
                             <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                <Form.Check onChange={(event) => {
+                                <Form.Control onChange={(event) => {setImage(event.target.files[0]);uploadImage();}} onClick={uploadImage} type="file" />
+                            </Form.Group>
+                        </Col>
+                        <Form.Check style={{marginLeft:'15px'}} onChange={(event) => {
                                     setAvailable(event.target.value);
                                 }} 
                                 type="checkbox" 
                                 label="Mašīna ir pieejama?" 
-                                />
-                                <Form.Control onChange={(event) => {setImage(event.target.files[0]);uploadImage();}} onClick={uploadImage} type="file" />
-                            </Form.Group>
-                        </Col>
+                        />
                     </Row>
 
                 </Form.Group>
 
-                <Button onClick={createPost} className='blue_button'>Apstiprināt</Button>
                 {
-                    show ? <Button onClick={() =>{ toggleShow(!show); createPost()}} variant="primary">Apstiprināt</Button>
+                    show ? <Button className='blue_button' onClick={() =>{ toggleShow(!show); createPost()}} variant="primary">Apstiprināt</Button>
                         : <Spinner animation="border" variant="primary" />
                     }
                 </Form>
