@@ -1,28 +1,56 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { Col, Container, Row } from 'react-bootstrap';
+import { getDocs, collection } from 'firebase/firestore';
+import { db } from '../firebase-config';
+
 import Footer from '../components/footer';
 import Header from '../components/header';
+
+import ImageGallery from 'react-image-gallery';
 
 import '../css/pages_css/carPartsDesc.css'
 
 function CarPartsDesc() {
+
+    const [postLists, setPostList] = useState([]);
+    const postsCollectionRef = collection(db, "CarParts"); 
+  
+    useEffect(() => {
+      const getPosts = async () => {
+        const data = await getDocs(postsCollectionRef);
+        setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      };
+      getPosts();
+    }, []);
+
+    const images = [
+        {
+          original: 'https://picsum.photos/id/1018/1000/600/',
+          thumbnail: 'https://picsum.photos/id/1018/250/150/',
+          originalHeight: '500px',
+        },
+        {
+          original: 'https://picsum.photos/id/1015/1000/600/',
+          thumbnail: 'https://picsum.photos/id/1015/250/150/',
+          originalHeight: '500px',
+        },
+        {
+          original: 'https://picsum.photos/id/1019/1000/600/',
+          thumbnail: 'https://picsum.photos/id/1019/250/150/',
+          originalHeight: '500px',
+        },
+      ];
+
   return (
     <>
     <Header/>
     <Container>
+    <Row style={{height:'30px'}}/>
+    <ImageGallery items={images} showFullscreenButton={false} showPlayButton={false}/>
+    {postLists.map((post) => {
 
-
-
-
-
-
-
-
-
-
-
-
-        <Row>
+    })}
+            <Row>
             <h2 className='title'> Mercedes Sprinter</h2>
             <p className='text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vel leo risus. Cras at suscipit elit. Quisque semper augue elit, eget pellentesque dui iaculis quis. Proin risus velit, eleifend eget lectus in, malesuada lacinia risus. <br></br>Maecenas sed libero elementum mi feugiat pellentesque. Suspendisse interdum lectus ut consequat hendrerit. In ut rhoncus urna. Fusce risus diam, consequat quis massa sed, aliquam luctus leo. Vivamus eu enim quis lacus vulputate fringilla eget non felis. Quisque tincidunt pharetra ipsum. Nullam pharetra iaculis magna, vitae vehicula ligula condimentum sit amet. Donec ornare nulla ex, vel placerat justo consectetur viverra. Integer maximus imperdiet risus, quis semper felis pharetra eu. Cras eget mauris pulvinar, ornare ipsum in, accumsan urna. Nunc scelerisque orci massa, a eleifend odio condimentum quis. Etiam eget orci gravida, mattis enim non, posuere ipsum. Quisque maximus mi eros, et tincidunt felis pretium ac. Proin ut tincidunt odio.</p>
             <h3 className='price'>4999€</h3>
