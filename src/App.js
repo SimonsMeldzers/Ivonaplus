@@ -6,6 +6,7 @@ import Rental from './pages/rental';
 import CreateRental from './pages/createRental';
 import CarParts from './pages/carParts';
 import CreateCarParts from './pages/createCarParts';
+import CarPartsDesc from './pages/carPartsDesc';
 import { useState } from 'react';
 
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='/createrental' element={ <CreateRental isAuth={isAuth}/>} />
         <Route path='/carparts' element={ <CarParts/>} />
         <Route path='/createcarparts' element={<CreateCarParts/>}/>
+        <Route path='/carpartsdesc' element={<CarPartsDesc/>}/>
       </Routes>
     </Router>
   );
