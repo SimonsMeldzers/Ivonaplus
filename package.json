@@ -15,7 +15,6 @@
     "react-icons": "^4.7.1",
     "react-image-gallery": "^1.2.11",
     "react-redux": "^8.0.5",
-    "react-redux-firebase": "^3.11.0",
     "react-router-dom": "^6.6.1",
     "react-scripts": "^5.0.1",
     "redux-firestore": "^1.0.0",
