@@ -53,7 +53,7 @@ function CarPartsDesc() {
 
     <Row style={{height:'0px'}}/>
     
-    <ImageGallery items={carParts.imageUrls.map((url) => ({original: url, thumbnail: url, originalHeight: '600px',}))} showFullscreenButton={false} showPlayButton={false}/>
+    <ImageGallery items={carParts.imageUrls.map((url) => ({original: url, thumbnail: url}))} showFullscreenButton={false} showPlayButton={false}/>
             <Row>
             <h2 className='title'> {carParts.title}</h2>
             <p className='text'>{carParts.text}</p>
@@ -71,7 +71,7 @@ function CarPartsDesc() {
                     <Col><h5 className='info_info'>ivonaplus@inbox.lv</h5></Col>
                 </Row>
                 <Row>
-                    <Col><h5 className='info_title'>Vieta</h5></Col>
+                    <Col><h5 className='info_title'>Vieta:</h5></Col>
                     <Col><h5 className='info_info'>Rīga</h5></Col>
                 </Row>
             </Col>

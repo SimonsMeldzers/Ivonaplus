@@ -1,5 +1,11 @@
 @import "~react-image-gallery/styles/css/image-gallery.css";
 
+@media(min-width: 1000px) {
+    .image-gallery-image{
+        width: 900px !important;
+    }
+}
+
 .title{
     text-decoration: underline #3AA8E7;
 }
@@ -15,6 +21,10 @@
 }
 .breadcrumbs_link{
     color: rgb(77, 77, 77);
+}
+
+.info_info{
+    color: rgb(93, 93, 93);
 }
 
 
