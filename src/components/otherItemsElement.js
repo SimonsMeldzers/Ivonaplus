@@ -31,7 +31,7 @@ function OtherItemsElement(props) {
                     {
                     show ? <Link 
                     to={{
-                        pathname:`${'/carparts/' + props.id}`,
+                        pathname:`${'/otheritems/' + props.id}`,
                     }}
                     style={{
                         textDecoration:'none',

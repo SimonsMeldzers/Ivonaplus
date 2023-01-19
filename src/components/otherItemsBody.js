@@ -23,7 +23,7 @@ function OtherItemsBody(props) {
   
   return (
     <div className='car_parts_body'>
-      <h2><span className='heading_decor'>Lietotas</span> un <span className='heading_decor'>jaunas</span> preces plaša klāsta.</h2>
+      <h2 className='heading'><span className='heading_decor'>Lietotas</span> un <span className='heading_decor'>jaunas</span> preces plaša klāsta.</h2>
     <Container className='car_parts_container'>
     {isLoading &&   <div className='loading_div'><Spinner className='loading_spinner' animation="grow" variant="primary" style={{ width: "7rem", height: "7rem" }} />
     </div>}
