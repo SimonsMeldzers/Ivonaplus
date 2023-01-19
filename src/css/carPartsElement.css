@@ -3,4 +3,43 @@
         height: 210px;
     }
 }
+@media (max-width: 766px) {
+    .card_col, .card_title, .card_text{
+        text-align: center !important;
+    }
+    .card_title{
+        font-size: 24px !important;
+    }
+}
+@media (max-width: 1200px) {
+    .car_img{
+        height: 140px !important;
+    }
+}
 
+@media (min-width:767px) and (max-width:991px){
+    .car_img{
+        height: 210px !important;
+    }
+}
+
+@media (max-width: 766px) {
+    .car_img{
+        height: 240px !important;
+    }
+}
+@media (max-width: 410px) {
+    .car_img{
+        height: 190px !important;
+    }
+}
+
+
+.card_text{
+    margin: -5px 0px 10px 0px;
+    font-size: 18px;
+}
+.card_title{
+    font-size: 27px;
+    margin-top: -10px;
+}

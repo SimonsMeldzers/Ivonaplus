@@ -1,5 +1,9 @@
 .car_parts_body{
-    margin-bottom: 40px;
+    background-color: #F5F9FE;
+}
+.car_parts_container{
+    padding-bottom: 30px;
+    margin-top: -15px;
 }
 
 .loading_div{

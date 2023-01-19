@@ -28,11 +28,14 @@ function RentalBody() {
     <>
     {isLoading &&   <div className='loading_div'><Spinner className='loading_spinner' animation="grow" variant="primary" style={{ width: "7rem", height: "7rem" }} /> </div>}
     {!isLoading &&
+    <>
+    
     <div className='rental-body'>
         {postLists.map((post) => {
             return <RentalCar key={post.id} id={post.id} imageUrl={post.url} name={post.name} year={post.year} seats={post.seats} doors={post.doors} gearBox={post.gearBox} AC={post.AC} price={post.price} available={post.available}/>
         })}
     </div>
+    </>
     }
     </>
   );

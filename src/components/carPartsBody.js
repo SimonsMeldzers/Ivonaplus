@@ -22,8 +22,8 @@ function CarPartsBody(props) {
   }, []);
   
   return (
-    <>
-    <Container className='car_parts_body'>
+    <div className='car_parts_body'>
+    <Container className='car_parts_container'>
     {isLoading &&   <div className='loading_div'><Spinner className='loading_spinner' animation="grow" variant="primary" style={{ width: "7rem", height: "7rem" }} />
     </div>}
     {!isLoading &&
@@ -31,14 +31,14 @@ function CarPartsBody(props) {
       {postLists.map((post) => {
           const imageUrlsArr = post.imageUrls;
           return (
-            <CarPartsElement id={post.id} key={post.id} title={post.title} text={post.text} imageUrls={imageUrlsArr}/>   
+            <CarPartsElement id={post.id} key={post.id} title={post.title} text={post.text} imageUrls={imageUrlsArr} engine={post.engine} year={post.year}/>   
           );
         })}
       </Row>
     
     }
     </Container>
-    </>
+    </div>
   );
 
 
