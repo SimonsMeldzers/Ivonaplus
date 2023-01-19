@@ -16,24 +16,22 @@ import { storage } from '../firebase-config';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 
-function CreateCarParts({isAuth}) {
+function CreateOtherItems({isAuth}) {
     {/* For the button & spinner */}
     const [show, toggleShow] = useState(true);
 
     const [title, setTitle] = useState("");
-    const [year, setYear] = useState("");
-    const [gearBox, setGearBox] = useState("");
-    const [price, setPrice] = useState("");
+    const [location, setLocation] = useState("");
+    const [phone1, setPhone1] = useState("");
+    const [phone2, setPhone2] = useState("");
     const [text, setText] = useState("");
-    const [engine, setEngine] = useState("");
-    const [mileage, setMileage] = useState("");
-    const [vin, setVin] = useState("");
+    const [price, setPrice] = useState("");
 
     const [images, setImages] = useState(null);
 
     let navigate = useNavigate();
 
-    const postsCollectionRef = collection(db, "CarParts")
+    const postsCollectionRef = collection(db, "OtherItems")
 
     useEffect(() => {
         if (!localStorage.getItem('isAuth')){
@@ -48,7 +46,7 @@ function CreateCarParts({isAuth}) {
         const urls = [];
         for(let i = 0; i < imageList.length; i++) {
             const image = imageList[i];
-            const imageLinkName = `carParts/${uniqueFolderName}/${image.name}`;
+            const imageLinkName = `otheritems/${uniqueFolderName}/${image.name}`;
             const imageRef = ref(storage, imageLinkName);
             const snapshot = await uploadBytes(imageRef, image);
             const url = await getDownloadURL(snapshot.ref);
@@ -61,8 +59,8 @@ function CreateCarParts({isAuth}) {
 
     const createPost = async () => {
         const imageUrls = await uploadImages();
-        await addDoc(postsCollectionRef, {title, year, gearBox, price, engine, mileage, vin, text, imageUrls});
-        navigate('/carparts');
+        await addDoc(postsCollectionRef, {title, phone1, phone2, location, text, price, imageUrls});
+        navigate('/otheritems');
     };
 
   return (
@@ -70,30 +68,30 @@ function CreateCarParts({isAuth}) {
         <Header/>
         <div className="crBody">
             <Container className='crContainer'>
-                <h2>Rezerves detaļas</h2>
+                <h2>Citas Preces</h2>
                 <Form className='crForm'>
                 <Form.Group className="mb-3">
                     <Row>
                         <Col>
-                            <Form.Label>Maš. nosaukums</Form.Label>
+                            <Form.Label>Preces nos.</Form.Label>
                             <Form.Control onChange={(event) => {
                                 setTitle(event.target.value);
                             }} 
                             className='crInputDouble'
                             type="" 
-                            placeholder="Maš. nosaukums" 
+                            placeholder="Nosaukums" 
                             />
 
                         </Col>
                         
                         <Col>
-                            <Form.Label>Nobraukums</Form.Label>
+                            <Form.Label>Atr. vieta</Form.Label>
                                 <Form.Control onChange={(event) => {
-                                    setMileage(event.target.value);
+                                    setLocation(event.target.value);
                                 }} 
                                 className='crInputDouble'
                                 type="" 
-                                placeholder="km" 
+                                placeholder="Atrašanās vieta" 
                                 />
                         </Col>
                                                      
@@ -103,33 +101,22 @@ function CreateCarParts({isAuth}) {
                 <Form.Group className="mb-3">
                     <Form.Label>Parametri</Form.Label>
                     <Row>
-
-                        <Col>
-                            <Form.Select onChange={(event) => {
-                                setGearBox(event.target.value);
-                            }} 
-                            aria-label="Default select example">
-                                <option>Kārba</option>
-                                <option value="M">Manuālā</option>
-                                <option value="A">Automāts</option>
-                            </Form.Select>
-                        </Col>
                         <Col>
                                 <Form.Control onChange={(event) => {
-                                    setYear(event.target.value);
+                                    setPhone1(event.target.value);
                                 }} 
                                 className='crInputDouble'
                                 type="" 
-                                placeholder="Maš. gads" 
+                                placeholder="Tel. num. 1" 
                                 />
                         </Col>
                         <Col>                                
                                 <Form.Control onChange={(event) => {
-                                    setEngine(event.target.value);
+                                    setPhone2(event.target.value);
                                 }} 
                                 className='crInputDouble'
                                 type="" 
-                                placeholder="Mot. tilp." 
+                                placeholder="Tel. num. 2" 
                                 />
                         </Col>
 
@@ -143,16 +130,7 @@ function CreateCarParts({isAuth}) {
                             }} 
                                 className=''
                                 type="" 
-                                placeholder="Mašīnas cena" 
-                            /> 
-                        </Col>
-                        <Col>
-                            <Form.Control onChange={(event) => {
-                                setVin(event.target.value);
-                            }} 
-                                className=''
-                                type="" 
-                                placeholder="VIN" 
+                                placeholder="Preces cena" 
                             /> 
                         </Col>
                     </Row>
@@ -182,4 +160,4 @@ function CreateCarParts({isAuth}) {
   )
 }
 
-export default CreateCarParts;
+export default CreateOtherItems;

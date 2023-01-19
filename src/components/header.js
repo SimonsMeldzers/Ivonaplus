@@ -31,14 +31,14 @@ function Header() {
                     <NavLink className='router_links' to='/'>Serviss</NavLink>
                     <NavLink className='router_links' to='/rental'>Mašīnu noma</NavLink>
                     <NavLink className='router_links' to='/carparts'>Rezerves daļas</NavLink>
-                    <NavLink className='router_links' to='/'>Citas preces</NavLink>
+                    <NavLink className='router_links' to='/otheritems'>Citas preces</NavLink>
 
                     {!localStorage.getItem('isAuth') ? <NavLink className='router_links' to='/'></NavLink> : 
                   
                     <NavDropdown className='router_dropdown' id="nav-dropdown-dark-example" title="Pievienot" menuVariant="dark">            
                             <NavLink className='dropdown-item' to='/createrental'> Nomai </NavLink>
                             <NavLink className='dropdown-item' to='/createcarparts'> Detaļām </NavLink>
-                            <NavLink className='dropdown-item' to='/'> Citam </NavLink>            
+                            <NavLink className='dropdown-item' to='/createotheritems'> Citam </NavLink>            
                     </NavDropdown>
 
                     }

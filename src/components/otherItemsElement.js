@@ -1,21 +1,22 @@
 import React, { useState } from 'react';
 import { Card, Container, Col, Spinner } from 'react-bootstrap';
-
 import { Link } from 'react-router-dom';
+
 import { doc, deleteDoc } from 'firebase/firestore';
 import { db } from '../firebase-config';
 
-import BlueButton from './blue_button';
-
-import '../css/carPartsElement.css'
-
-function CarPartsElement(props) {
+import '../css/otherItemsElement.css'
+function OtherItemsElement(props) {
     const [show, toggleShow] = useState(true);
+    const text = props.text;
+    const textSlice = text.slice(0,75);
+
     const deletePost = async (id) => {
-        const postDoc = doc(db, "CarParts", id);
+        const postDoc = doc(db, "OtherItems", id);
         await deleteDoc(postDoc);
         window.location.reload();
       };
+
   return (
     <>
     <Col lg={3} md={6} xs={12} className='card_col'>
@@ -25,15 +26,17 @@ function CarPartsElement(props) {
                     <Card.Img className='car_img' variant="top" src={props.imageUrls[0]} />
                     <Card.Body>
                     <Card.Title className='card_title'>{props.title}</Card.Title>
-                    <Card.Text className='card_text'>{props.year + ' | ' + props.engine}</Card.Text>
+                    <Card.Text className='card_text'>{textSlice + '  ...'}</Card.Text>
 
                     {
                     show ? <Link 
                     to={{
                         pathname:`${'/carparts/' + props.id}`,
                     }}
-                    >
-                        <BlueButton onClick={() => toggleShow(!show)} text='Skat. vairāk' width='140'/></Link>
+                    style={{
+                        textDecoration:'none',
+                    }}>
+                        <a className='show_more' onClick={() => toggleShow(!show)}> Skat. vairāk {'>'}</a> </Link>
                         : <Spinner animation="border" variant="primary" />
                     }
                     {localStorage.getItem('isAuth') && (
@@ -53,4 +56,4 @@ function CarPartsElement(props) {
   
 };
 
-export default CarPartsElement;
+export default OtherItemsElement;

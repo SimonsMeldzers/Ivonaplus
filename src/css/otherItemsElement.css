@@ -1,0 +1,13 @@
+.card_text{
+    margin: -5px 0px 5px 0px;
+    font-size: 18px;
+    color: rgb(136, 136, 136);
+}
+.card_title{
+    font-size: 27px;
+    margin-top: -10px;
+}
+.show_more{
+    color: #3AA8E7;
+    text-decoration: none !important;
+}
