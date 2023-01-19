@@ -1,29 +1,30 @@
-import Container from 'react-bootstrap/Container';
+import React, {useState} from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 
 import '../css/tab_selector.css'
+import { Link } from 'react-router-dom';
 
-function TabSelector(){
+function TabSelector({home, rental, carParts}){
     return(
         <div className=''>
                 <Row className="tabSelectorRow">
                     <Col className='tabSelectorCol'>
-                        <a href='#'>
-                            <button className='tabSelectorButton'>Auto serviss</button>
-                        </a>
+                        <Link to='/'>
+                            <button id={home} className='tabSelectorButton'>Auto serviss</button>
+                        </Link>
                     </Col>
                     
                     <Col className='tabSelectorCol'>
-                        <a href='#'>
-                            <button className='tabSelectorButton'>Mašīnu noma</button>
-                        </a>
+                        <Link to='/rental'>
+                            <button id={rental} className='tabSelectorButton'>Mašīnu noma</button>
+                        </Link>
                     </Col>
                     <Col className='tabSelectorCol'>
-                        <a href='#'>
-                            <button className='tabSelectorButton'>Rezerves detaļas</button>
-                        </a>
+                        <Link to='/carParts'>
+                            <button id={carParts} className='tabSelectorButton'>Rezerves detaļas</button>
+                        </Link>
                     </Col>
                 </Row>
             

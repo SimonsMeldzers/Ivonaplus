@@ -9,7 +9,7 @@ function Rental() {
     <>
         <Header/>
         <Banner/>
-        <TabSelector/>
+        <TabSelector rental='rental'/>
         <RentalBody/>
         <Footer/>
     </>

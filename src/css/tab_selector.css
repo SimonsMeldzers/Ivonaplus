@@ -21,8 +21,8 @@
     height: 55px;
     font-size: 19px;
 }
-.tabSelectorButton:focus{
+
+#home, #rental, #carParts{
     background-color: #212531;
     color: white;
-
 }

@@ -11,7 +11,7 @@ function CarParts() {
     <>
         <Header/>
         <Banner/>
-        <TabSelector/>
+        <TabSelector carParts='carParts'/>
         <CarPartsBody/>
         <Footer/>
     </>

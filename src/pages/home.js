@@ -12,7 +12,7 @@ function Home() {
   <>
     <Header/>
     <Banner/>
-    <TabSelector/>
+    <TabSelector home='home'/>
     <Services/>
     <InfoSection/>
     <FindUsSection/>
