@@ -13,3 +13,18 @@
     margin-left: 10px;
     margin-top: 10px;
 }
+.breadcrumbs_link{
+    color: rgb(77, 77, 77);
+}
+
+
+
+
+
+
+
+.loading_div{
+    text-align: center;
+    margin-top: 20vh;
+    height: 60vh;
+}

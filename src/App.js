@@ -21,7 +21,7 @@ function App() {
         <Route path='/createrental' element={ <CreateRental isAuth={isAuth}/>} />
         <Route path='/carparts' element={ <CarParts/>} />
         <Route path='/createcarparts' element={<CreateCarParts/>}/>
-        <Route path='/carparts/:carPartId' element={<CarPartsDesc/>}/>
+        <Route path='/carparts/:id' element={<CarPartsDesc/>}/>
       </Routes>
     </Router>
   );

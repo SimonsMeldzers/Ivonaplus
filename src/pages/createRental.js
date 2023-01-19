@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import { Container, Row, Col, Spinner } from 'react-bootstrap';
 
 import '../css/pages_css/createRental.css'
-import { async } from '@firebase/util';
+
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../firebase-config';
 import { useNavigate } from 'react-router-dom';

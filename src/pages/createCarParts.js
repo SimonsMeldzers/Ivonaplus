@@ -7,13 +7,13 @@ import Form from 'react-bootstrap/Form';
 import { Container, Row, Col, Spinner } from 'react-bootstrap';
 
 import '../css/pages_css/createCarParts.css'
-import { async } from '@firebase/util';
+
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from '../firebase-config';
 import { useNavigate } from 'react-router-dom';
 
 import { storage } from '../firebase-config';
-import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 
 function CreateCarParts({isAuth}) {
@@ -156,6 +156,16 @@ function CreateCarParts({isAuth}) {
                             /> 
                         </Col>
                     </Row>
+                    <Form.Label style={{marginTop:'15px'}}>Pilns apraksts</Form.Label>
+                    <Form.Control onChange={(event) => {
+                                    setText(event.target.value);
+                                }} 
+                                    className=''
+                                    as="textarea" 
+                                    placeholder="Apraksts"
+                                     
+                    /> 
+
                     <Form.Label style={{marginTop: '0px'}}></Form.Label>
                     <Form.Control onChange={(event) => {setImages(event.target.files);uploadImages();}} type="file" multiple />
                 </Form.Group>
