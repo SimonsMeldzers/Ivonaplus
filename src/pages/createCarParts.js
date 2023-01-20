@@ -172,7 +172,7 @@ function CreateCarParts({isAuth}) {
                 {
                     show ? <Button onClick={() =>{ toggleShow(!show); createPost()}} className='blue_button'>Apstiprināt</Button>
                         : <Spinner animation="border" variant="primary" />
-                    }
+                }
                 </Form>
             </Container>
             </div>

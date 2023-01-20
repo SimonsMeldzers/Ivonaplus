@@ -10,6 +10,7 @@ import CarPartsDesc from './pages/carPartsDesc';
 import OtherItems from './pages/otherItems';
 import CreateOtherItems from './pages/createOtherItems';
 import OtherItemsDesc from './pages/otheItemsDesc';
+import ContactUs from './pages/contactUs';
 import { useState } from 'react';
 
 
@@ -28,6 +29,7 @@ function App() {
         <Route path='/otheritems' element={<OtherItems/>}></Route>
         <Route path='/createotheritems' element={<CreateOtherItems/>}></Route>
         <Route path='/otheritems/:id' element={<OtherItemsDesc/>}></Route>
+        <Route path='/contactus' element={<ContactUs/>}></Route>
       </Routes>
     </Router>
   );

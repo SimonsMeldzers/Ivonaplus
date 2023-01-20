@@ -1,0 +1,72 @@
+@media (min-width: 990px) {
+    #left_col{
+        margin-right: 20px;
+    }
+    #right_col{
+        margin-left: 20px;
+    }
+}
+.office_icon{
+    width: 60px;
+}
+.time_icon{
+    width: 80px;
+}
+.phone_icon{
+    width: 68px;
+}
+.email_icon{
+    width: 74px;
+}
+@media (max-width:322px) {
+    #left_col{
+        text-align: center;
+    }
+    .item_row{
+        margin: 0px !important;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+.map_img{
+    border-radius: 15px;
+}
+
+
+.heading, .heading4{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+
+.heading span, .heading4 span{
+    color: #3AA8E7;
+}
+
+.main_col{
+    background-color: #F5F9FE;
+    padding: 20px 0px 10px 20px;
+    border-radius: 15px;
+    box-shadow: rgba(3, 102, 214, 0.2) 0px 0px 5px 1px;
+}
+.main_row{
+    width: 100% !important;
+    margin: auto;
+}
+
+.item_row{
+    width: 100%;
+}
+
+#left_col, #right_col{
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.form-control{
+    width:95%;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    border: none;
+}
+
