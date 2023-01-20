@@ -63,7 +63,7 @@ function ContactUs() {
                             </Col>
                             <Col lg={8}>
                                 <h5>Darba laiks</h5>
-                                <p>Pirm. - Piekt. | 9.00-17.00</p>
+                                <p style={{marginBottom:'0px'}}>Pirm. - Piekt. | 9.00-17.00</p>
                                 <p>Se. - Sv. | Brīvs.</p>
                             </Col>
                             </Row>
@@ -77,7 +77,7 @@ function ContactUs() {
                             </Col>
                             <Col lg={8}>
                                 <h5>Tel. num.</h5>
-                                <p>+371 29275712</p>
+                                <p style={{marginBottom:'0px'}}>+371 29275712</p>
                                 <p>+371 20116677</p>
                             </Col>
                             </Row>
