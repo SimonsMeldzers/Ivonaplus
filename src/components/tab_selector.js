@@ -1,7 +1,5 @@
-import React, {useState} from 'react';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
+import React from 'react';
+import {Row, Col} from 'react-bootstrap';
 
 import '../css/tab_selector.css'
 import { Link } from 'react-router-dom';

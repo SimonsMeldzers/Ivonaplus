@@ -4,8 +4,6 @@ import Footer from '../components/footer';
 import Header from '../components/header';
 import BlueButton from '../components/blue_button';
 import Form from 'react-bootstrap/Form';
-import { useNavigate } from 'react-router-dom';
-
 
 import emailjs from '@emailjs/browser';
 
@@ -18,7 +16,6 @@ import email_icon from '../img/email_icon.png';
 
 function ContactUs() {
     const [show, toggleShow] = useState(true);
-    let navigate = useNavigate();
     const form = useRef();
 
     const sendEmail = (e) => {

@@ -28,7 +28,7 @@ function RentalCar({name, year, seats, doors, gearBox, AC, price, id, imageUrl, 
                     </Row>
                     <Row md="auto" className='icons_row'>
                         <Col className='icons_col' xs={3}>
-                            <h4 className='car_param'><img className='icons' style={{width:'22px', height:'22px'}} src="https://static-00.iconduck.com/assets.00/person-icon-512x512-5lhrcpms.png"/> <span id="icon_column">:</span> {seats}</h4>
+                            <h4 className='car_param'><img alt='Missing' className='icons' style={{width:'22px', height:'22px'}} src="https://static-00.iconduck.com/assets.00/person-icon-512x512-5lhrcpms.png"/> <span id="icon_column">:</span> {seats}</h4>
                         </Col>
                         <Col className='icons_col' xs={3}>
                             <h4 className='car_param'><img className='icons' style={{width:'28px', height:'28px'}} src="https://static.thenounproject.com/png/165236-200.png" alt="" /> <span id="icon_column">:</span> {doors}</h4>
@@ -45,7 +45,7 @@ function RentalCar({name, year, seats, doors, gearBox, AC, price, id, imageUrl, 
                             <Col>
                                 <h1 className='car_price'>{price}€/24h</h1>
                                 <h6 className='car_price_difference'> *Cena var atšķirties</h6>
-                                {!available == "" ? <p className='available'>Pieejama</p> : <p className='not_available'>Nav pieejama</p>}
+                                {!available === "" ? <p className='available'>Pieejama</p> : <p className='not_available'>Nav pieejama</p>}
                             </Col>
                             <Col>
                                 <button id='blue_button'> Rezervēt </button>

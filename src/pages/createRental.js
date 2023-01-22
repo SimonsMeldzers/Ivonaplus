@@ -13,7 +13,7 @@ import { db } from '../firebase-config';
 import { useNavigate } from 'react-router-dom';
 
 import { storage } from '../firebase-config';
-import { ref, uploadBytes, listAll, getDownloadURL } from 'firebase/storage';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 
 function CreateRental({isAuth}) {
@@ -29,7 +29,6 @@ function CreateRental({isAuth}) {
     const [price, setPrice] = useState("");
     const [available, setAvailable] = useState("");
     const [image, setImage] = useState(null);
-    const [imageUrls, setImageUrls] = useState([]);
     
     let navigate = useNavigate();
 
@@ -39,53 +38,24 @@ function CreateRental({isAuth}) {
         if (!localStorage.getItem('isAuth')){
             navigate("/login");
         };
-        listAll(imageListRef).then((response) => {
-            response.items.forEach((item) => {
-                getDownloadURL(item).then((url) => {
-                    setImageUrls((prev) => [...prev, url]); 
-                });
-            });
-        });
     }, []);
 
-    const imageListRef = ref(storage, "rental/");
-
-    // const uploadImage = () => {
-    //     if(image == null) return;
-    //     const imageLinkName = `rental/${image.name + new Date().getTime()}`;
-    //     const imageRef = ref(storage, imageLinkName);
-    //     uploadBytes(imageRef, image).then((snapshot) => {
-    //         getDownloadURL(snapshot.ref).then((url) => {
-    //             setImageUrls((prev) => [...prev, url]);
-    //         });
-    //         alert("Image Uploaded");
-    //     });
-    // };
     const uploadImage = async () => {
         if(image == null) return;
         const imageLinkName = `rental/${image.name + new Date().getTime()}`;
         const imageRef = ref(storage, imageLinkName);
         const snapshot = await uploadBytes(imageRef, image);
         const url = await getDownloadURL(snapshot.ref);
-        setImageUrls((prev) => [...prev, url]);
         alert("Image Uploaded");
         return url;
     };
     
- 
-    // const createPost = async () => {
-    //     await addDoc(postsCollectionRef, {name, year, seats, doors, gearBox, AC, price, available});
-    //     uploadImage();
-    //     navigate('/rental');
-    // };
     const createPost = async () => {
         const url = await uploadImage();
         await addDoc(postsCollectionRef, {name, year, seats, doors, gearBox, AC, price, available, url});
         navigate('/rental');
     };
     
-
-
   return (
     <>
         <Header/>

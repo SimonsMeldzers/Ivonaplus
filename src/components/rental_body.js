@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getDocs, addDoc, collection, deleteDoc, doc } from 'firebase/firestore';
+import { getDocs, collection } from 'firebase/firestore';
 import { db } from '../firebase-config';
 import RentalCar from './rental_car';
 import { Spinner } from 'react-bootstrap';

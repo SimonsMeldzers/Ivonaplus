@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Col, Container, Image, Row, Spinner } from 'react-bootstrap';
+import { Col, Container, Row, Spinner } from 'react-bootstrap';
 
 import { Link, useParams } from 'react-router-dom';
 import { db } from '../firebase-config';
