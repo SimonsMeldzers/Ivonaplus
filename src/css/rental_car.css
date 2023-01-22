@@ -175,6 +175,7 @@
 .delete_button{
     background-color: transparent;
     border: none;
+    margin-left: 20px;
 }
 
 .available{

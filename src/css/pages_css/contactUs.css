@@ -69,8 +69,14 @@ p{
     margin-top: 10px;
 }
 
+
+/* Works for the entire website's inputs */
 .form-control{
     width:95%;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    border: none;
+}
+.form-select{
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     border: none;
 }
