@@ -10,13 +10,8 @@ import { updateDoc, deleteDoc, doc } from 'firebase/firestore';
 import { db } from '../firebase-config';
 
 function RentalCar({name, year, seats, doors, gearBox, AC, price, id, imageUrl, available}) {
-    const deletePost = async (id) => {
-        const postDoc = doc(db, "CarRental", id);
-        await deleteDoc(postDoc);
-        window.location.reload();
-      };
 
-      const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <div className='car_body'>
@@ -55,13 +50,6 @@ function RentalCar({name, year, seats, doors, gearBox, AC, price, id, imageUrl, 
                             </Col>
                             <Col>
                                 <button id='blue_button'> Rezervēt </button>
-                                    {localStorage.getItem('isAuth') && (
-                                    <button 
-                                    onClick={() => {
-                                            deletePost(id);
-                                        }} 
-                                    className='delete_button'>&#128465;
-                                    </button>)}
                                     {localStorage.getItem('isAuth') && (
                                     <button 
                                     onClick={() => setModalShow(true)}
@@ -118,6 +106,12 @@ function MyVerticallyCenteredModal(props) {
         });
         await window.location.reload(); 
     };
+
+    const deletePost = async (id) => {
+        const postDoc = doc(db, "CarRental", id);
+        await deleteDoc(postDoc);
+        window.location.reload();
+      };
 
     return (
         
@@ -239,7 +233,7 @@ function MyVerticallyCenteredModal(props) {
                                 setAvailable("");
                             }} 
                             inline
-                            label="Nepieejama"
+                            label="Nav pieejama"
                             name="group1"
                             type="radio"
                             id={`inline-radio-2`}
@@ -252,6 +246,13 @@ function MyVerticallyCenteredModal(props) {
 
         <Modal.Footer>
             <Button id='blue_button' onClick={() => [props.onHide, updatePost()].map(func => func())}> Saglabāt </Button>
+            {localStorage.getItem('isAuth') && (
+                                    <button 
+                                    onClick={() => {
+                                            deletePost(props.id);
+                                        }} 
+                                    className='delete_button'>&#128465;
+                                    </button>)}
         </Modal.Footer>
       </Modal>
     );
