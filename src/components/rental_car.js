@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../css/rental_car.css'
-import { Container, Row, Col, Image, Spinner, Form, Button} from 'react-bootstrap';
-
+import { Container, Row, Col, Image, Form, Button} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 
 import { updateDoc, deleteDoc, doc } from 'firebase/firestore';
@@ -39,13 +39,15 @@ function RentalCar({name, year, seats, doors, gearBox, AC, price, id, imageUrl, 
                             <h4 className='car_param'><img className='icons' src="https://cdn-icons-png.flaticon.com/512/567/567301.png" alt="" /> <span id="icon_column">:</span> {AC}</h4>
                         </Col>    
                     </Row>
-                    <p className='car_info'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor enim et hendrerit semper. Sed sit amet libero id sem volutpat blandit ac ut lectus. Vestibulum ante. Nunc placerat vehicula egestas. Etiam sagittis ante</p>
+                    <p className='car_info'>Rezervēt mašīnu var sazvanoties pa tel. num. +371 29275712, vai rakstot e-pastā uz ivonaplus@inbox.lv <br></br> Auto mašīnas nomas cena pazeminās, ņemot uz ilgāku laiku, t.i. 3 dienas, nedēļa, mēnesis, u.t.t.</p>
                 </Col>
                 <Col xs={3} lg={3} className='car_price_col'>
                     <Row className='car_price_row' md="auto">               
                             <Col className='button_col'>
                                 <h1 className='car_price'>{price}€/24h</h1>
+                                <Link to='/contactus'>
                                 <button id='blue_button'> Rezervēt </button>
+                                </Link>
                                 {!available == "" ? <p className='available'>Pieejama</p> : <p className='not_available'>Nav pieejama</p>}
 
                                 {localStorage.getItem('isAuth') && (
