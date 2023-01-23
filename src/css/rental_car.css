@@ -6,7 +6,7 @@
     .car_param{
         font-size: 1.7vw !important;
     }
-    .available{
+    .available, .not_available{
         font-size: 1.5vw !important;
     }
 }
