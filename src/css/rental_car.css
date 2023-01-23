@@ -29,7 +29,7 @@
 }
 
 .car_name{
-    margin-top: 15px;
+    margin-top: 0.1vh;
     margin-bottom: 0px;
     font-weight: 350;
     font-size: 1.8vmax;
@@ -53,7 +53,11 @@
 .car_price{
     color: #3AA8E7;
     font-weight: 400;
-    font-size: 2.2vmax;
+    font-size: 1.9vmax;
+}
+.car_price_col{
+    align-items: center;
+    margin: auto;
 }
 
 .car_price_difference{
@@ -69,11 +73,9 @@
     background-color: #3AA8E7 !important;
     border: none;
     border-radius: 0.3vw;
-    width: 7em;
-    height: 3em;
+    width: 6.4vmax;
+    height: 2.5vmax;
     font-size: 0.9vmax;
-    padding: auto;
-    margin-top: 7px;
     text-align: center;
     box-shadow: rgba(58, 168, 231, 0.6) 0px 7px 29px 0px;
 }

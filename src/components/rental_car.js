@@ -41,7 +41,7 @@ function RentalCar({name, year, seats, doors, gearBox, AC, price, id, imageUrl, 
                     </Row>
                     <p className='car_info'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor enim et hendrerit semper. Sed sit amet libero id sem volutpat blandit ac ut lectus. Vestibulum ante. Nunc placerat vehicula egestas. Etiam sagittis ante</p>
                 </Col>
-                <Col xs={3} lg={3}>
+                <Col xs={3} lg={3} className='car_price_col'>
                     <Row className='car_price_row' md="auto">               
                             <Col className='button_col'>
                                 <h1 className='car_price'>{price}€/24h</h1>
