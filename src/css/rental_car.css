@@ -1,10 +1,13 @@
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .icons{
         width: 1.7vw !important;
         height: 1.7vw !important;
     }
     .car_param{
         font-size: 1.7vw !important;
+    }
+    .available{
+        font-size: 1.5vw !important;
     }
 }
 
