@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import '../css/rental_car.css'
 import { Container, Row, Col, Image, Spinner, Form, Button} from 'react-bootstrap';
 
-import BlueButton from './blue_button';
-
 import Modal from 'react-bootstrap/Modal';
 
 import { updateDoc, deleteDoc, doc } from 'firebase/firestore';
@@ -20,7 +18,7 @@ function RentalCar({name, year, seats, doors, gearBox, AC, price, id, imageUrl, 
                 <Col xs={6} lg={4} className='img_col'>
                     <Image fluid='true' className='car_image img-fluid' src={imageUrl}></Image>
                 </Col>
-                <Col xs={6} lg={8}>
+                <Col xs={4} lg={6}>
                     <Row>
                         <h2 className='car_name'>{name}</h2>
                     </Row>
@@ -29,36 +27,33 @@ function RentalCar({name, year, seats, doors, gearBox, AC, price, id, imageUrl, 
                     </Row>
                     <Row md="auto" className='icons_row'>
                         <Col className='icons_col' xs={3}>
-                            <h4 className='car_param'><img alt='Missing' className='icons' style={{width:'22px', height:'22px'}} src="https://static-00.iconduck.com/assets.00/person-icon-512x512-5lhrcpms.png"/> <span id="icon_column">:</span> {seats}</h4>
+                            <h4 className='car_param'><img alt='Missing' className='icons' src="https://static-00.iconduck.com/assets.00/person-icon-512x512-5lhrcpms.png"/> <span id="icon_column">:</span> {seats}</h4>
                         </Col>
                         <Col className='icons_col' xs={3}>
-                            <h4 className='car_param'><img className='icons' style={{width:'28px', height:'28px'}} src="https://static.thenounproject.com/png/165236-200.png" alt="" /> <span id="icon_column">:</span> {doors}</h4>
+                            <h4 className='car_param'><img className='icons' src="https://static.thenounproject.com/png/165236-200.png" alt="" /> <span id="icon_column">:</span> {doors}</h4>
                         </Col>
                         <Col className='icons_col' xs={3}>
-                            <h4 className='car_param'><img className='icons' style={{width:'21px', height:'21px'}} src="https://cdn-icons-png.flaticon.com/512/1820/1820633.png" alt="" /> <span id="icon_column">:</span> {gearBox}</h4>
+                            <h4 className='car_param'><img className='icons' src="https://cdn-icons-png.flaticon.com/512/1820/1820633.png" alt="" /> <span id="icon_column">:</span> {gearBox}</h4>
                         </Col>
                         <Col className='icons_col' xs={3}>
-                            <h4 className='car_param'><img className='icons' style={{width:'27px', height:'27px'}} src="https://cdn-icons-png.flaticon.com/512/567/567301.png" alt="" /> <span id="icon_column">:</span> {AC}</h4>
+                            <h4 className='car_param'><img className='icons' src="https://cdn-icons-png.flaticon.com/512/567/567301.png" alt="" /> <span id="icon_column">:</span> {AC}</h4>
                         </Col>    
                     </Row>
-
+                    <p className='car_info'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor enim et hendrerit semper. Sed sit amet libero id sem volutpat blandit ac ut lectus. Vestibulum ante. Nunc placerat vehicula egestas. Etiam sagittis ante</p>
+                </Col>
+                <Col lg={2} xs={2}>
                     <Row className='car_price_row' md="auto">               
-                            <Col>
+                            <Col className='button_col'>
                                 <h1 className='car_price'>{price}€/24h</h1>
-                                <h6 className='car_price_difference'> *Cena var atšķirties</h6>
-                                {!available == "" ? <p className='available'>Pieejama</p> : <p className='not_available'>Nav pieejama</p>}
-                            </Col>
-                            <Col>
                                 <button id='blue_button'> Rezervēt </button>
-                                    {localStorage.getItem('isAuth') && (
+                                {!available == "" ? <p className='available'>Pieejama</p> : <p className='not_available'>Nav pieejama</p>}
+
+                                {localStorage.getItem('isAuth') && (
                                     <button 
                                     onClick={() => setModalShow(true)}
                                     className='delete_button'>&#9999;
                                     </button>)}
-                                    
                             </Col>
-                            
-
                     </Row>
                 </Col>
 

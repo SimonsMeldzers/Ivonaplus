@@ -1,4 +1,4 @@
-@media (max-width:990px) {
+/* @media (max-width:990px) {
     .car_name, .car_year, .car_param, .car_info{
         font-size: 15px !important;
         font-weight: 400 !important;
@@ -79,15 +79,19 @@
     .car_image{
         border-radius: 10px !important;
     }
-}
+} */
 
-@media (max-width:304px) {
+/* @media (max-width:304px) {
     #blue_button{
         margin-bottom: 3px !important;
     }
     .img_col{
         height: 100px !important;
     }
+} */
+.icons{
+    width: 1vw;
+    height: 1vw;
 }
 
 
@@ -111,39 +115,33 @@
     height: 100%;
 }
 
+
 .car_name{
     margin-top: 15px;
     margin-bottom: 0px;
     font-weight: 350;
+    font-size: 1.8vw;
 }
 
 .car_year{
     font-weight: 350;
+    font-size: 1.1vw;
 }
 
 .car_param{
     font-weight: 350;
-    margin-top: 15px;
     text-align: center;
+    font-size: 1.1vw;
 }
 .car_info{
     font-weight: 400;
-    font-size: 17px;
-    margin-top: 15px;
-    width: 90%;
+    font-size: 0.8vw;
 }
-
-/* .car_price_row{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-} */
 
 .car_price{
     color: #3AA8E7;
     font-weight: 400;
+    font-size: 1.9vw;
 }
 
 .car_price_difference{
@@ -158,11 +156,11 @@
     color: white;
     background-color: #3AA8E7 !important;
     border: none;
-    border-radius: 10px;
-    width: 130px;
-    height: 40px;
-    font-size: 16px;
-    padding: 1px 30px 1px 30px;
+    border-radius: 0.3vw;
+    width: 6.4vw;
+    height: 2vw;
+    font-size: 0.8vw;
+    padding: auto;
     margin-top: 7px;
     text-align: center;
     box-shadow: rgba(58, 168, 231, 0.6) 0px 7px 29px 0px;
@@ -180,9 +178,15 @@
 
 .available{
     color: rgb(113, 186, 3);
-    font-size: 15px;
+    font-size: 0.7vw;
 }
 .not_available{
     color: red;
-    font-size: 15px;
+    font-size: 0.7vw;
+}
+
+.button_col{
+    align-items: center;
+    text-align: center;
+    margin: auto;
 }
