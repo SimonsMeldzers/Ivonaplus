@@ -15,10 +15,10 @@ function RentalCar({name, year, seats, doors, gearBox, AC, price, id, imageUrl, 
     <div className='car_body'>
         <Container className='car_container'>
             <Row className='car_row'>
-                <Col xs={6} lg={4} className='img_col'>
+                <Col xs={4} lg={4} className='img_col'>
                     <Image fluid='true' className='car_image img-fluid' src={imageUrl}></Image>
                 </Col>
-                <Col xs={4} lg={6}>
+                <Col xs={5} lg={5}>
                     <Row>
                         <h2 className='car_name'>{name}</h2>
                     </Row>
@@ -41,7 +41,7 @@ function RentalCar({name, year, seats, doors, gearBox, AC, price, id, imageUrl, 
                     </Row>
                     <p className='car_info'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor enim et hendrerit semper. Sed sit amet libero id sem volutpat blandit ac ut lectus. Vestibulum ante. Nunc placerat vehicula egestas. Etiam sagittis ante</p>
                 </Col>
-                <Col lg={2} xs={2}>
+                <Col xs={3} lg={3}>
                     <Row className='car_price_row' md="auto">               
                             <Col className='button_col'>
                                 <h1 className='car_price'>{price}€/24h</h1>
