@@ -7,6 +7,9 @@
 a{
     text-decoration: none;
 }
-p{
+.menu_p{
     font-size: large;
+}
+.menu_p:hover{
+    color: #3AA8E7 !important;
 }

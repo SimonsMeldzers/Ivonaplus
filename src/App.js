@@ -15,6 +15,7 @@ import ContactUs from './pages/contactUs';
 import ServicesCardDesc from './pages/servicesCardDesc';
 
 
+
 function App() {
   const [isAuth, setIsAuth] = useState(false);
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path='/otheritems/:id' element={<OtherItemsDesc/>}></Route>
         <Route path='/contactus' element={<ContactUs/>}></Route>
         <Route path='/services/:id' element={<ServicesCardDesc/>}></Route>
+
       </Routes>
     </Router>
   );

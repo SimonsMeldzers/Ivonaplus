@@ -108,3 +108,10 @@
     text-align: center;
     margin: auto;
 }
+
+/* ModalHistory style */
+
+.scroll{
+    max-height: 300px;
+    overflow-y: scroll;
+}
