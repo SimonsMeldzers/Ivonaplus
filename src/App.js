@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { useState } from 'react';
 
 import Home from './pages/home';
 import Login from './pages/login';
@@ -11,7 +12,7 @@ import OtherItems from './pages/otherItems';
 import CreateOtherItems from './pages/createOtherItems';
 import OtherItemsDesc from './pages/otheItemsDesc';
 import ContactUs from './pages/contactUs';
-import { useState } from 'react';
+import ServicesCardDesc from './pages/servicesCardDesc';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path='/createotheritems' element={<CreateOtherItems/>}></Route>
         <Route path='/otheritems/:id' element={<OtherItemsDesc/>}></Route>
         <Route path='/contactus' element={<ContactUs/>}></Route>
+        <Route path='/services/:id' element={<ServicesCardDesc/>}></Route>
       </Routes>
     </Router>
   );

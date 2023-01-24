@@ -1,0 +1,5 @@
+@media (max-width:770px) {
+    .services_menu{
+        display: none !important;
+    }
+}

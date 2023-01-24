@@ -1,4 +1,4 @@
-@media only screen and (max-width: 1570px) {
+/* @media only screen and (max-width: 1570px) {
     .servicesCards{
         width: 100% !important;
     }
@@ -16,9 +16,8 @@
         height: 2900px !important;
 
     }
-}
+} */
 .services{
-    height: 1100px;
     text-align: center;
     background-color: #F5F9FE;
 }
