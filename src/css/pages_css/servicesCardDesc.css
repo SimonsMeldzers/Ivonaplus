@@ -1,5 +1,27 @@
+@media (max-width:990px) {
+    .figure{
+        width: 500px;
+    }
+}
+
 @media (max-width:770px) {
     .services_menu{
         display: none !important;
+    }
+}
+
+@media (max-width:580px) {
+    .figure{
+        width: 400px;
+    }
+}
+@media (max-width:420px) {
+    .figure{
+        width: 300px;
+    }
+}
+@media (max-width:330px) {
+    .figure{
+        width: 200px;
     }
 }
