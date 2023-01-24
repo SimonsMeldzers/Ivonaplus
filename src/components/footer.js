@@ -2,7 +2,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Container } from 'react-bootstrap';
 import BlueButton from './blue_button';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 import '../css/footer.css'
 
@@ -16,8 +16,11 @@ function Footer(){
                         <Col className='logo_col'>
 
                             <h2 className='logo'>Ivonaplus</h2>
-                            <p className='logo_text'>Lorem ipsum dolor sit amet, nisi arcu  tellus, non tristique leo ipsum id tortor. Mauris sed aliquet orci,Lorem ipsum dolor sit amet, nisi arcu  tellus, non tristique leo ipsum id tortor. Mauris sed aliquet orci.</p>
-                            <BlueButton text='Sazināties' fontSize='15' width='125'/>
+                            <p className='logo_text'>Rīga, Valdlauču iela 8 <br/>
+                                Pirmd. - Piekt. | 9.00 - 17.00 <br/>
+                                Sestd. - Svētd. | Brīvs
+                            </p>
+                            <Link to='contactus'><BlueButton text='Sazināties' fontSize='15' width='125'/></Link>
                         </Col>
                         <Col>
 
@@ -33,10 +36,11 @@ function Footer(){
 
                             <h4 className='links_header'>Mājaslapas saites</h4>
                             <ul className='links_ul'>
-                                <li><NavLink className='links' to='/'> Serviss </NavLink></li>
-                                <li><NavLink className='links'> Auto Noma </NavLink></li>
-                                <li><NavLink className='links'> Rezerves daļas </NavLink></li>
-                                <li><NavLink className='links'> Citas Preces </NavLink></li>
+                                <li><NavLink to='/' className='links'> Serviss </NavLink></li>
+                                <li><NavLink to='/rental' className='links'> Auto Noma </NavLink></li>
+                                <li><NavLink to='/carparts' className='links'> Rezerves daļas </NavLink></li>
+                                <li><NavLink to='/otheritems' className='links'> Citas Preces </NavLink></li>
+                                <li><NavLink to='/contactus' className='links'> Info </NavLink></li>
                             </ul>
                         </Col>
                     </Row>
