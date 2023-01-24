@@ -5,6 +5,8 @@ import { useParams } from 'react-router-dom';
 import { db } from '../firebase-config';
 import { doc, getDoc } from 'firebase/firestore';
 
+import { Link } from 'react-router-dom';
+
 import Footer from '../components/footer';
 import Header from '../components/header';
 
@@ -42,6 +44,12 @@ function ServicesCardDesc() {
     {!isLoading &&
 
       <Container style={{marginTop:'35px'}}>
+            <Row style={{display:'flex', marginTop:'10px'}}>
+                <p>
+                <Link className='breadcrumbs_link' to={{pathname:'/'}}> Galvenā{'>'} </Link>
+                <Link className='breadcrumbs_link' to={{pathname:`/services/${id}`}}> {services.heading1}{'>'} </Link>
+                </p>
+            </Row>
         <Row>
           <Col lg={3} md={4} xs={0} className='services_menu'>
             <ServicesMenu/>
