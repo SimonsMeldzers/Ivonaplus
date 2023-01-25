@@ -4,7 +4,7 @@ import { Container, Row, Col, Image, Form, Button} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 
-import { updateDoc, deleteDoc, doc,  addDoc, collection, getDocs } from 'firebase/firestore';
+import { updateDoc, deleteDoc, doc,  addDoc, setDoc, collection, getDocs } from 'firebase/firestore';
 import { db } from '../firebase-config';
 import { useNavigate } from 'react-router-dom';
 
@@ -288,6 +288,7 @@ function ModalHistory(props) {
     const postsCollectionRef = collection(db, "RentalHistory")
 
     useEffect(() => {
+        // console.log(new Date().getTime())
         const getPosts = async () => {
             const data = await getDocs(postsCollectionRef);
             const filteredData = data.docs.filter((doc) => doc.data().rentalID === props.id);
@@ -320,7 +321,7 @@ function ModalHistory(props) {
                     <h6><span style={{color:'#3AA8E7'}}>Datums:</span> {post.startDate} - {post.endDate}</h6>
                     <h6><span style={{color:'#3AA8E7'}}>Tel. nummurs:</span> {post.phone}</h6>
                     <h6><span style={{color:'#3AA8E7'}}>E-pasts:</span> {post.email}</h6>
-                    <a target="_blank" style={{color:'#3AA8E7', fontWeight:'400', textDecoration:'underline'}} href={post.url}> Īrnieka ID</a>
+                    <a target="_blank" rel="noreferrer" style={{color:'#3AA8E7', fontWeight:'400', textDecoration:'underline'}} href={post.url}> Īrnieka ID</a>
                 </Container>
             )
             })}
@@ -367,6 +368,7 @@ function ModalCreateHistory(props) {
     let navigate = useNavigate();
 
     const postsCollectionRef = collection(db, "RentalHistory");
+    
 
     const uploadImage = async () => {
         if(image == null) return;
@@ -378,8 +380,11 @@ function ModalCreateHistory(props) {
         return url;
     };
     const createPost = async () => {
+        const dateId = new Date().getTime();
+        const dateIdStr = dateId.toString();
+        const postsDocRef = doc(db, "RentalHistory", dateIdStr);
         const url = await uploadImage();
-        await addDoc(postsCollectionRef, {rentalID, startDate, endDate, name, lastName, phone, email, url});
+        await setDoc(postsDocRef, {rentalID, startDate, endDate, name, lastName, phone, email, url});
         navigate('/rental');
     };
 
