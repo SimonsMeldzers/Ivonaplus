@@ -316,7 +316,7 @@ function ModalHistory(props) {
             <div className='scroll'>
             {postLists.map((post) => {
             return(
-                <Container style={{marginBottom:'20px',backgroundColor:'#F5F9FE', borderRadius:'10px', padding:'10px 0px 5px 10px', boxShadow: 'rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px'}}>
+                <Container key={Math.random()} style={{marginBottom:'20px',backgroundColor:'#F5F9FE', borderRadius:'10px', padding:'10px 0px 5px 10px', boxShadow: 'rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px'}}>
                     <h6><span style={{color:'#3AA8E7'}}>Īrnieks:</span> {post.name} {post.lastName}</h6>
                     <h6><span style={{color:'#3AA8E7'}}>Datums:</span> {post.startDate} - {post.endDate}</h6>
                     <h6><span style={{color:'#3AA8E7'}}>Tel. nummurs:</span> {post.phone}</h6>
