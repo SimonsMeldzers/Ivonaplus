@@ -40,7 +40,7 @@ function ContactUs() {
         <Row className='main_row justify-content-md-center'>
             <Col lg={5} className='main_col' id='left_col'>
                 <Row className='justify-content-md-center item_row'>
-                    <Row  lassName='justify-content-md-center'>
+                    <Row className='justify-content-md-center'>
                         <Col className='item_col'>
                             <Row>
                             <Col lg={4}>
