@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../css/rental_car.css'
-import { Container, Row, Col, Image, Form, Button} from 'react-bootstrap';
+import { Container, Row, Col, Image, Form, Button, Spinner} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 
@@ -354,6 +354,9 @@ function ModalHistory(props) {
 };
 
 function ModalCreateHistory(props) {
+    {/* For the button & spinner */}
+    const [show, toggleShow] = useState(true);
+
     const [rentalID, setRentalID] = useState(props.id);
     const [startDate, setStartDate] = useState("");
     const [endDate, setEndDate] = useState("");
@@ -363,11 +366,6 @@ function ModalCreateHistory(props) {
     const [email, setEmail] = useState("");
 
     const [image, setImage] = useState(null);
-
-
-    let navigate = useNavigate();
-
-    const postsCollectionRef = collection(db, "RentalHistory");
     
 
     const uploadImage = async () => {
@@ -376,7 +374,6 @@ function ModalCreateHistory(props) {
         const imageRef = ref(storage, imageLinkName);
         const snapshot = await uploadBytes(imageRef, image);
         const url = await getDownloadURL(snapshot.ref);
-        alert("Image Uploaded");
         return url;
     };
     const createPost = async () => {
@@ -385,7 +382,8 @@ function ModalCreateHistory(props) {
         const postsDocRef = doc(db, "RentalHistory", dateIdStr);
         const url = await uploadImage();
         await setDoc(postsDocRef, {rentalID, startDate, endDate, name, lastName, phone, email, url});
-        navigate('/rental');
+        alert("Nomas vēsture pievienota!");
+        props.onHide();
     };
 
     return (
@@ -477,7 +475,11 @@ function ModalCreateHistory(props) {
                         <Form.Control onChange={(event) => {setImage(event.target.files[0]);uploadImage();}} onClick={uploadImage} type="file" />
                     </Form.Group>
                 </Form.Group>
-                <Button className='blue_button' onClick={() =>createPost() && props.onHide} variant="primary">Apstiprināt</Button>
+                
+                {
+                    show ? <Button className='blue_button' onClick={() =>{ toggleShow(!show); createPost()}} variant="primary">Apstiprināt</Button>
+                        : <Spinner animation="border" variant="primary" />
+                }
                 </Form>
         </Modal.Body>
       </Modal>
