@@ -45,7 +45,7 @@ function Header() {
                     }
                 </Nav>
                 <Nav>
-                    {!localStorage.getItem('isAuth') ? <NavLink className='router_links' to='/login'>Log In</NavLink> : <NavLink onClick={signUserOut} className='router_links' to='/'> Sign Out </NavLink>}
+                    {!localStorage.getItem('isAuth') ? <NavLink className='router_links' to='/login'>Ieiet</NavLink> : <NavLink onClick={signUserOut} className='router_links' to='/'> Iziet </NavLink>}
                 </Nav>
             </Navbar.Collapse>
         </Container>

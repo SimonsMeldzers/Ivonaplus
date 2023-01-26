@@ -126,8 +126,8 @@ function CreateRental({isAuth}) {
                             }} 
                             aria-label="Default select example">
                                 <option>A/C</option>
-                                <option value="+">Ir</option>
-                                <option value="-">Nav</option>
+                                <option value="Ir">Ir</option>
+                                <option value="Nav">Nav</option>
                             </Form.Select>
                         </Col>
                      
