@@ -11,7 +11,7 @@ function Home() {
   return (
   <>
     <Header/>
-    <Banner/>
+    <Banner imageUrl={`https://assets.whichcar.com.au/image/upload/s--1ppMloYL--/ar_2.304921968787515,c_fill,f_auto,q_auto:good/c_scale,w_768/v1/archive/whichcar/2016/06/02/-1/Car-Engine-top.jpg`}/>
     <TabSelector home='home'/>
     <Services/>
     <InfoSection/>

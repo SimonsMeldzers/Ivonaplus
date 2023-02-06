@@ -5,7 +5,7 @@
   }
 
 .banner_container{
-    background-image: url('../img/Car-Engine-top.jpg');
+    /* background-image: url('../img/Car-Engine-top.jpg'); */
     background-color: rgb(201, 201, 201);
     background-blend-mode: multiply;
     background-repeat: no-repeat;

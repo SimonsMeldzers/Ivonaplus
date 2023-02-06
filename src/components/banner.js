@@ -7,13 +7,16 @@ import BlueButton from './blue_button';
 
 import '../css/banner.css'
 
-function Banner(){
+function Banner({imageUrl}){
+    
     const myRef = useRef(null)
 
     const executeScroll = () => myRef.current.scrollIntoView()    
-    return(
+    return( 
         <>
-        <div className='banner_container'>
+        <div className='banner_container' 
+        style={{backgroundImage:`url(${imageUrl})`}}
+        >
             <Container>
                 <Row className="justify-content-md-center">
                     <Col className='banner_col_1'>

@@ -13,7 +13,7 @@ import CreateOtherItems from './pages/createOtherItems';
 import OtherItemsDesc from './pages/otheItemsDesc';
 import ContactUs from './pages/contactUs';
 import ServicesCardDesc from './pages/servicesCardDesc';
-
+import ServicesCardDesc2 from './pages/servicesCardDesc2';
 
 
 function App() {
@@ -32,7 +32,8 @@ function App() {
         <Route path='/createotheritems' element={<CreateOtherItems/>}></Route>
         <Route path='/otheritems/:id' element={<OtherItemsDesc/>}></Route>
         <Route path='/contactus' element={<ContactUs/>}></Route>
-        <Route path='/services/:id' element={<ServicesCardDesc/>}></Route>
+        {/* <Route path='/services/:id' element={<ServicesCardDesc/>}></Route> */}
+        <Route path='/services/:id' element={<ServicesCardDesc2/>}></Route>
 
       </Routes>
     </Router>
