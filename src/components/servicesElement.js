@@ -16,9 +16,9 @@ function ServicesElement(props) {
                 <Card.Text>
                     {text}
                 </Card.Text>
-                // <Link to={`/services/${props.id}`}>
-                //     <Button className='cardButton'>Uzzināt vairāk &gt;</Button>
-                // </Link>
+                {/* <Link to={`/services/${props.id}`}>
+                    <Button className='cardButton'>Uzzināt vairāk &gt;</Button>
+                </Link> */}
             </Card.Body>
         </Card>
     </>
